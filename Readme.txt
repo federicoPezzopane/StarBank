@@ -31,7 +31,7 @@ I seguenti sono i moduli in cui si divide l'applicativo :
 		news relative alla banca stessa )
 		-infine, un footer con informazioni ( eventuale piva, contatti, logo  )
 	
-	-Homepage Clienti: Una volta effettuato il login, si atterrerà sulla homepage clienti; qui sarà possibile visualizzare :
+	-Area Riservata: Una volta effettuato il login, si atterrerà sulla homepage clienti; qui sarà possibile visualizzare :
 		-Il proprio codice iban
 		-Il proprio saldo disponibile / contabile
 		-Un elenco delle proprie operazioni ( entrate, uscite entro un range di 1 mese; volendo si può ampliare il filtro di ricerca della data )
