@@ -7,7 +7,7 @@ Linguaggi:
 	BE : Java
 	
 Framework:
-	FE : Angular 20
+	FE : Angular 15
 	BE : Spring Boot 3
 
 Database:
