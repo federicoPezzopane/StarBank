@@ -1,0 +1,57 @@
+<div *ngIf="isLoading" class="loading-overlay">
+  <mat-icon class="loading-spinner rainbow-star">star</mat-icon>
+</div>
+
+<mat-toolbar class="mat-elevation-z6">
+  <button mat-icon-button class="menu-button" (click)="sidenav.toggle()" aria-label="Toggle sidebar">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div class="star-container" [class.spin]="starSpin">
+    <mat-icon class="rainbow-star">star</mat-icon>
+  </div>
+
+  <span class="logo-text">
+    <a class="logo-text" routerLink="/" style="cursor: pointer; text-decoration: none; color: inherit;">
+      StarBank
+    </a>
+  </span>
+
+  <span class="spacer"></span>
+
+  <button mat-icon-button (click)="toggleTheme()" aria-label="Toggle dark/light theme">
+    <mat-icon>{{ isDarkTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="app-container">
+  <mat-sidenav #sidenav
+               [mode]="isMobile ? 'over' : 'side'"
+               [opened]="false"
+               position="start"
+               disableClose="false">
+    <mat-nav-list>
+      <h4 mat-subheader style="text-align: center;">Accesso</h4>
+      <mat-divider></mat-divider>
+
+      <a mat-list-item routerLink="/login" (click)="sidenav.close()">
+        <mat-icon class="padding">lock</mat-icon>
+        <span matLine>Area Riservata</span>
+      </a>
+
+      <a mat-list-item routerLink="/register" (click)="sidenav.close()">
+        <mat-icon matListIcon>person_add</mat-icon>
+        <span matLine>Registrati</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+    <footer class="footer">
+      <small>&copy; 2025 StarBank</small>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

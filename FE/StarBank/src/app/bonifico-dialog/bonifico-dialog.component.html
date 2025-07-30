@@ -1,0 +1,40 @@
+<h2 mat-dialog-title class="dialog-title">Effettua un Bonifico</h2>
+
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="bonificoForm" class="bonifico-form">
+    <mat-form-field appearance="outline" class="full-width" style="max-width: 420px;">
+      <mat-label>Destinatario</mat-label>
+      <mat-select
+        formControlName="destinatarioIban"
+        [disableOptionCentering]="true"
+        panelClass="custom-select-panel"
+      >
+        <mat-option *ngFor="let u of utenti" [value]="u.iban.iban">
+          {{ u.nome }} {{ u.cognome }} – {{ u.iban.iban }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width" style="max-width: 420px;">
+      <mat-label>Importo (€)</mat-label>
+      <input matInput type="number" formControlName="importo" min="0.01" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width" style="max-width: 420px;">
+      <mat-label>Descrizione (facoltativa)</mat-label>
+      <input matInput formControlName="descrizione" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-stroked-button color="warn" mat-dialog-close>Annulla</button>
+  <button
+  mat-flat-button
+  class="invia-bonifico-btn"
+  (click)="inviaBonifico()"
+  [disabled]="bonificoForm.invalid"
+>
+  Invia Bonifico
+</button>
+</mat-dialog-actions>

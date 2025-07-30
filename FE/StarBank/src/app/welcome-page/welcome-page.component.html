@@ -1,0 +1,173 @@
+<section id="welcome-section" class="welcome-section">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./assets/slide1.jpeg" class="d-block w-100" alt="First slide" />
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/slide2.jpg" class="d-block w-100" alt="Second slide" />
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/slide3.jpg" class="d-block w-100" alt="Third slide" />
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="welcome-text-overlay visible" [class.visible]="showWelcomeText">
+    <h1>
+      Benvenuto in <span class="span-starbank">StarBank</span>
+    </h1>
+    <p>La tua banca digitale di fiducia</p>
+    <button class="welcome-btn mt-4">Scopri di più</button>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="features-container">
+    <div class="feature-card left-card" [class.in-view]="leftInView" #leftCard>
+      <div class="sub-card security">
+        <mat-icon>security</mat-icon>
+        <h3>Sicurezza Avanzata</h3>
+        <p>Utilizziamo i più recenti standard di sicurezza informatica per proteggere i tuoi dati 24/7.</p>
+      </div>
+      <div class="sub-card offers">
+        <mat-icon>local_offer</mat-icon>
+        <h3>Offerte Esclusive</h3>
+        <ul>
+          <li>Conto Zero Spese per 12 mesi</li>
+          <li>Cashback su ogni pagamento</li>
+          <li>Gestione Crypto integrata</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-card right-card" [class.in-view]="rightInView" #rightCard>
+      <div class="sub-card innovation">
+        <mat-icon class="rocket-icon">rocket_launch</mat-icon>
+        <h3>Velocità e Innovazione</h3>
+        <p>Grazie alle ultime tecnologie, apri un conto in 3 minuti e gestiscilo con intelligenza artificiale.</p>
+      </div>
+      <div class="sub-card support">
+        <mat-icon>support_agent</mat-icon>
+        <h3>Assistenza H24</h3>
+        <p>Il nostro team è sempre disponibile per aiutarti, ogni giorno, a qualsiasi ora.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <h2 class="section-title">Cosa dicono i nostri clienti</h2>
+  <div class="reviews-container">
+    <div class="review-card">
+      <div class="card-front">
+        <mat-icon>star</mat-icon>
+        <span class="review-author">— Luca R., Milano</span>
+      </div>
+      <div class="card-back">
+        <p class="review-text">"StarBank ha rivoluzionato il mio modo di gestire i risparmi. Intuitiva e sicura!"</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="card-front">
+        <mat-icon>star</mat-icon>
+        <span class="review-author">— Giulia M., Roma</span>
+      </div>
+      <div class="card-back">
+        <p class="review-text">"Servizio clienti eccellente e app velocissima. Consigliatissima."</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="card-front">
+        <mat-icon>star</mat-icon>
+        <span class="review-author">— Marco B., Torino</span>
+      </div>
+      <div class="card-back">
+        <p class="review-text">"Grazie a StarBank ho iniziato a investire in crypto senza stress!"</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="card-front">
+        <mat-icon>star</mat-icon>
+        <span class="review-author">— Elisa F., Napoli</span>
+      </div>
+      <div class="card-back">
+        <p class="review-text">"Interfaccia semplice e assistenza sempre pronta a rispondere."</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="card-front">
+        <mat-icon>star</mat-icon>
+        <span class="review-author">— Roberto D., Firenze</span>
+      </div>
+      <div class="card-back">
+        <p class="review-text">"Conto corrente digitale che ha migliorato la mia gestione finanziaria."</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="card-front">
+        <mat-icon>star</mat-icon>
+        <span class="review-author">— Martina L., Bologna</span>
+      </div>
+      <div class="card-back">
+        <p class="review-text">"Ottime funzionalità e promozioni continue per i clienti."</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="card-front">
+        <mat-icon>star</mat-icon>
+        <span class="review-author">— Andrea S., Venezia</span>
+      </div>
+      <div class="card-back">
+        <p class="review-text">"App intuitiva e rapida, ottimo per i giovani investitori."</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="card-front">
+        <mat-icon>star</mat-icon>
+        <span class="review-author">— Laura P., Genova</span>
+      </div>
+      <div class="card-back">
+        <p class="review-text">"Gestione semplice e sicura dei miei risparmi, molto soddisfatta."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact-section" class="contact-section">
+  <div class="contact-container">
+    <h2>Contattaci</h2>
+    <p>Hai domande o vuoi maggiori informazioni? Scrivici!</p>
+    <form class="contact-form" (submit)="($event)">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" placeholder="Il tuo nome" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="La tua email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Messaggio</label>
+        <textarea id="message" name="message" rows="5" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Invia</button>
+    </form>
+  </div>
+</section>
