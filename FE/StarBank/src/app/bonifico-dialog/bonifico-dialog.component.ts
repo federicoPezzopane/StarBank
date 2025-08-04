@@ -21,8 +21,9 @@ export class BonificoDialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(this.data)
     const ibanMittente = this.data.ibanMittente;
-     this.utenti = this.data.utenti.filter((u: any) => u.iban.iban !== ibanMittente);
+     this.utenti = this.data.utenti.filter((u: any) => u.iban.iban !== ibanMittente.iban);
     this.bonificoForm = this.fb.group({
       destinatarioIban: ['', Validators.required],
       importo: [null, [Validators.required, Validators.min(0.01)]],
