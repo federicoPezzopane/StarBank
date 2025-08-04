@@ -1,0 +1,343 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="27.2.0">
+  <diagram name="Pagina-1" id="2231qErL2XZOnBb7ZVaO">
+    <mxGraphModel dx="1758" dy="702" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="207" pageHeight="207" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-1" value="Utente" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="840" width="250" height="820" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-2" value="&lt;div&gt;+ userId: int&lt;/div&gt;&lt;div&gt;+ nome: String&lt;/div&gt;&lt;div&gt;+ cognome: String&lt;/div&gt;&lt;div&gt;+ iban: Iban&lt;/div&gt;&lt;div&gt;+ eta: int&lt;/div&gt;&lt;div&gt;+ codiceFiscale: String&lt;/div&gt;&lt;div&gt;+ indirizzoResidenza: String&lt;/div&gt;&lt;div&gt;+ comuneResidenza: Comune&lt;/div&gt;&lt;div&gt;+ isBlocked: boolean&lt;/div&gt;&lt;div&gt;+ username: String&lt;/div&gt;&lt;div&gt;+ password: String&lt;/div&gt;&lt;div&gt;+ failedLogins: int&lt;/div&gt;&lt;div&gt;+ movimenti: List&amp;lt;Movimento&amp;gt;&lt;/div&gt;&lt;div&gt;+ investimenti: List&amp;lt;Investimento&amp;gt;&lt;/div&gt;&lt;div&gt;+ carte: List&amp;lt;Carta&amp;gt;&lt;/div&gt;&lt;div&gt;+ prestiti: List&amp;lt;Prestito&amp;gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-1">
+          <mxGeometry y="26" width="250" height="234" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-1">
+          <mxGeometry y="260" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-4" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;+ getUserId(): int&lt;/div&gt;&lt;div&gt;+ setUserId(userId: int): void&lt;/div&gt;&lt;div&gt;+ getNome(): String&lt;/div&gt;&lt;div&gt;+ setNome(nome: String): void&lt;/div&gt;&lt;div&gt;+ getCognome(): String&lt;/div&gt;&lt;div&gt;+ setCognome(cognome: String): void&lt;/div&gt;&lt;div&gt;+ getIban(): Iban&lt;/div&gt;&lt;div&gt;+ setIban(iban: Iban): void&lt;/div&gt;&lt;div&gt;+ getEta(): int&lt;/div&gt;&lt;div&gt;+ setEta(eta: int): void&lt;/div&gt;&lt;div&gt;+ getCodiceFiscale(): String&lt;/div&gt;&lt;div&gt;+ setCodiceFiscale(codiceFiscale: String): void&lt;/div&gt;&lt;div&gt;+ getIndirizzoResidenza(): String&lt;/div&gt;&lt;div&gt;+ setIndirizzoResidenza(indirizzoResidenza: String): void&lt;/div&gt;&lt;div&gt;+ getComuneResidenza(): Comune&lt;/div&gt;&lt;div&gt;+ setComuneResidenza(comune: Comune): void&lt;/div&gt;&lt;div&gt;+ isBlocked(): boolean&lt;/div&gt;&lt;div&gt;+ setBlocked(isBlocked: boolean): void&lt;/div&gt;&lt;div&gt;+ getUsername(): String&lt;/div&gt;&lt;div&gt;+ setUsername(username: String): void&lt;/div&gt;&lt;div&gt;+ getPassword(): String&lt;/div&gt;&lt;div&gt;+ setPassword(password: String): void&lt;/div&gt;&lt;div&gt;+ getFailedLogins(): int&lt;/div&gt;&lt;div&gt;+ setFailedLogins(failedLogins: int): void&lt;/div&gt;&lt;div&gt;+ getMovimenti(): List&amp;lt;Movimento&amp;gt;&lt;/div&gt;&lt;div&gt;+ setMovimenti(movimenti: List&amp;lt;Movimento&amp;gt;): void&lt;/div&gt;&lt;div&gt;+ getInvestimenti(): List&amp;lt;Investimento&amp;gt;&lt;/div&gt;&lt;div&gt;+ setInvestimenti(investimenti: List&amp;lt;Investimento&amp;gt;): void&lt;/div&gt;&lt;div&gt;+ getCarte(): List&amp;lt;Carta&amp;gt;&lt;/div&gt;&lt;div&gt;+ setCarte(carte: List&amp;lt;Carta&amp;gt;): void&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;+ getPrestiti(): List&amp;lt;Prestito&amp;gt;&lt;/div&gt;&lt;div&gt;+ setPrestiti(carte: List&amp;lt;Prestito&amp;gt;): void&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-1">
+          <mxGeometry y="268" width="250" height="552" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-5" value="Iban" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="960" y="840" width="180" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-6" value="+ ibanId: int&lt;div&gt;+ iban: String&lt;/div&gt;&lt;div&gt;+ userId: int&lt;/div&gt;&lt;div&gt;+ saldoDisponibile: float&lt;/div&gt;&lt;div&gt;+ saldoContabile: float&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-5">
+          <mxGeometry y="26" width="180" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-5">
+          <mxGeometry y="120" width="180" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-8" value="&lt;div&gt;+ getIbanId(): int&lt;/div&gt;&lt;div&gt;+ setIbanId(int ibanId)&lt;/div&gt;&lt;div&gt;+ getIban(): String&lt;/div&gt;&lt;div&gt;+ setIban(String iban)&lt;/div&gt;&lt;div&gt;+ getUserId(): int&lt;/div&gt;&lt;div&gt;+ setUserId(int userId)&lt;br&gt;+getSaldoDisponibile(): float&lt;/div&gt;&lt;div&gt;&lt;div&gt;+ setSaldoDisponibile(): void&lt;/div&gt;&lt;/div&gt;&lt;div&gt;+ getSaldoContabile(): float&lt;/div&gt;&lt;div&gt;+ setSaldoContabile(): void&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-5">
+          <mxGeometry y="128" width="180" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-9" value="iban" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=1;entryY=0.681;entryDx=0;entryDy=0;entryPerimeter=0;labelBackgroundColor=none;" edge="1" parent="1" target="pQTNSRN1XWMmVa6OmcXm-6">
+          <mxGeometry x="-0.5268" y="-20" relative="1" as="geometry">
+            <mxPoint x="1271" y="930" as="sourcePoint" />
+            <mxPoint x="1160" y="910" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1271" y="930" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-10" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-9">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-131" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-15" value="Comune" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1650" y="840" width="190" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-16" value="+ idComune: int&lt;div&gt;+ nomeComune: String&lt;/div&gt;&lt;div&gt;+ provincia: Provincia&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-15">
+          <mxGeometry y="26" width="190" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-15">
+          <mxGeometry y="100" width="190" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-18" value="&lt;div&gt;&lt;div&gt;+ getIdComune(): int&lt;/div&gt;&lt;div&gt;+ setIdComune(idComune: int): void&lt;/div&gt;&lt;div&gt;+ getNomeComune(): String&lt;/div&gt;&lt;div&gt;+ setNomeComune(nomeComune: String): void&lt;/div&gt;&lt;div&gt;+ getProvincia(): Provincia&lt;/div&gt;&lt;div&gt;+ setProvincia(provincia: Provincia): void&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-15">
+          <mxGeometry y="108" width="190" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-19" value="comuneResidenza" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;labelBackgroundColor=none;exitX=1;exitY=0.349;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="pQTNSRN1XWMmVa6OmcXm-2">
+          <mxGeometry x="-0.855" relative="1" as="geometry">
+            <mxPoint x="1510" y="950" as="sourcePoint" />
+            <mxPoint x="1650" y="948" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1540" y="948" />
+              <mxPoint x="1650" y="948" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-20" value="1..*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-19">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-22" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="1630" y="935" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-23" value="Provincia" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1650" y="1180" width="190" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-24" value="+ idProvincia: int&lt;div&gt;+ nomeProvincia: String&lt;/div&gt;&lt;div&gt;+ siglaProvincia: String&lt;/div&gt;&lt;div&gt;+ regione: Regione&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-23">
+          <mxGeometry y="26" width="190" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-25" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-23">
+          <mxGeometry y="100" width="190" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-26" value="&lt;div&gt;&lt;div&gt;+ getIdProvincia(): int&lt;/div&gt;&lt;div&gt;+ setIdProvincia(idProvincia: int): void&lt;/div&gt;&lt;div&gt;+ getNomeProvincia(): String&lt;/div&gt;&lt;div&gt;+ setNomeProvincia(nomeProvincia: String): void&lt;/div&gt;&lt;div&gt;+ getSiglaProvincia(): String&lt;/div&gt;&lt;div&gt;+ setSiglaProvincia(siglaProvincia: String): void&lt;/div&gt;&lt;div&gt;+ getRegione(): Regione&lt;/div&gt;&lt;div&gt;+ setRegione(regione: Regione): void&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-23">
+          <mxGeometry y="108" width="190" height="202" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-28" value="provincia" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;exitX=0.496;exitY=1.003;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;" edge="1" parent="1" source="pQTNSRN1XWMmVa6OmcXm-18" target="pQTNSRN1XWMmVa6OmcXm-23">
+          <mxGeometry x="-1" y="11" relative="1" as="geometry">
+            <mxPoint x="1760" y="1130" as="sourcePoint" />
+            <mxPoint x="1730" y="1200" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-29" value="1..*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-28">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-19" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-30" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="1730" y="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-31" value="Regione" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1650" y="1590" width="200" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-32" value="+ idRegione: Int&lt;div&gt;+ nomeRegione: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-31">
+          <mxGeometry y="26" width="200" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-33" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-31">
+          <mxGeometry y="70" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-34" value="&lt;div&gt;&lt;div&gt;+ getIdRegione(): int&lt;/div&gt;&lt;div&gt;+ setIdRegione(idRegione: int): void&lt;/div&gt;&lt;div&gt;+ getNomeRegione(): String&lt;/div&gt;&lt;div&gt;+ setNomeRegione(nomeRegione: String): void&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-31">
+          <mxGeometry y="78" width="200" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-35" value="regione" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;" edge="1" parent="1" target="pQTNSRN1XWMmVa6OmcXm-31">
+          <mxGeometry x="-0.9006" y="-1" relative="1" as="geometry">
+            <mxPoint x="1750" y="1491" as="sourcePoint" />
+            <mxPoint x="1600" y="1420" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1750" y="1491" />
+            </Array>
+            <mxPoint x="1" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-36" value="1..*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-35">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-20" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-37" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="1730" y="1590" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-38" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="1250" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-47" value="Movimento" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1200" width="280" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-48" value="+ idMovimento: int&lt;div&gt;+ importo: int&lt;/div&gt;&lt;div&gt;+ ibanOrigine: Iban&lt;/div&gt;&lt;div&gt;+ ibanDestinazione: Iban&lt;/div&gt;&lt;div&gt;+ tipoMovimento: String&lt;/div&gt;&lt;div&gt;+ dataMovimento: Date&lt;/div&gt;&lt;div&gt;+ descrizione: String&lt;/div&gt;&lt;div&gt;+ saldoPremovimento: float&lt;/div&gt;&lt;div&gt;+ saldoPostMovimento: float&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-47">
+          <mxGeometry y="26" width="280" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-49" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-47">
+          <mxGeometry y="170" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-50" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;+ getIdMovimento(): int&lt;/div&gt;&lt;div&gt;+ setIdMovimento(idMovimento: int): void&lt;/div&gt;&lt;div&gt;+ getImporto(): int&lt;/div&gt;&lt;div&gt;+ setImporto(importo: int): void&lt;/div&gt;&lt;div&gt;+ getIbanOrigine(): Iban&lt;/div&gt;&lt;div&gt;+ setIbanOrigine(ibanOrigine: Iban): void&lt;/div&gt;&lt;div&gt;+ getIbanDestinazione(): Iban&lt;/div&gt;&lt;div&gt;+ setIbanDestinazione(ibanDestinazione: Iban): void&lt;/div&gt;&lt;div&gt;+ getTipoMovimento(): String&lt;/div&gt;&lt;div&gt;+ setTipoMovimento(tipoMovimento: String): void&lt;/div&gt;&lt;div&gt;+ getDataMovimento(): Date&lt;/div&gt;&lt;div&gt;+ setDataMovimento(dataMovimento: Date): void&lt;/div&gt;&lt;div&gt;+ getDescrizione(): String&lt;/div&gt;&lt;div&gt;+ setDescrizione(descrizione: String): void&lt;/div&gt;&lt;div&gt;+ getSaldoPremovimento(): float&lt;/div&gt;&lt;div&gt;+ setSaldoPremovimento(saldoPremovimento: float): void&lt;/div&gt;&lt;div&gt;+ getSaldoPostMovimento(): float&lt;/div&gt;&lt;div&gt;+ setSaldoPostMovimento(saldoPostMovimento: float): void&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-47">
+          <mxGeometry y="178" width="280" height="322" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-51" value="ibanOrigine" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;labelBackgroundColor=none;entryX=0.551;entryY=1.003;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pQTNSRN1XWMmVa6OmcXm-47" target="pQTNSRN1XWMmVa6OmcXm-8">
+          <mxGeometry x="0.3925" y="40" relative="1" as="geometry">
+            <mxPoint x="1040" y="1130" as="sourcePoint" />
+            <mxPoint x="1040" y="1070" as="targetPoint" />
+            <mxPoint x="1" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-52" value="1..*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-51">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-53" value="2" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="1050" y="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-62" value="ibanDestinazione" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-64" value="Investimento" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="960" y="1730" width="260" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-65" value="+ idInvestimento: int&lt;div&gt;+ quantita: int&lt;/div&gt;&lt;div&gt;+ prezzoAcquisto: float&lt;/div&gt;&lt;div&gt;+ valoreAttuale: float&lt;/div&gt;&lt;div&gt;+ iban: Iban&lt;/div&gt;&lt;div&gt;+ dataInvestimento: Date&lt;/div&gt;&lt;div&gt;+ fondo: Fondo&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-64">
+          <mxGeometry y="26" width="260" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-66" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-64">
+          <mxGeometry y="130" width="260" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-67" value="&lt;div&gt;&lt;div&gt;&lt;div&gt;+ getIdInvestimento(): int&lt;/div&gt;&lt;div&gt;+ setIdInvestimento(idInvestimento: int): void&lt;/div&gt;&lt;div&gt;+ getQuantita(): int&lt;/div&gt;&lt;div&gt;+ setQuantita(quantita: int): void&lt;/div&gt;&lt;div&gt;+ getPrezzoAcquisto(): float&lt;/div&gt;&lt;div&gt;+ setPrezzoAcquisto(prezzoAcquisto: float): void&lt;/div&gt;&lt;div&gt;+ getValoreAttuale(): float&lt;/div&gt;&lt;div&gt;+ setValoreAttuale(valoreAttuale: float): void&lt;/div&gt;&lt;div&gt;+ getIban(): Iban&lt;/div&gt;&lt;div&gt;+ setIban(iban: Iban): void&lt;/div&gt;&lt;div&gt;+ getDataInvestimento(): Date&lt;/div&gt;&lt;div&gt;+ setDataInvestimento(dataInvestimento: Date): void&lt;/div&gt;&lt;div&gt;+ getFondo(): Fondo&lt;/div&gt;&lt;div&gt;+ setFondo(fondo: Fondo): void&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-64">
+          <mxGeometry y="138" width="260" height="252" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-68" value="Fondo" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="1720" width="220" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-69" value="+ idFondo: int&lt;div&gt;+ Isin: String&lt;/div&gt;&lt;div&gt;+ nome: String&lt;/div&gt;&lt;div&gt;+ categoria: String&lt;/div&gt;&lt;div&gt;+ valuta: String&lt;/div&gt;&lt;div&gt;+ dataLancio: Date&lt;/div&gt;&lt;div&gt;+ rischio: int&lt;/div&gt;&lt;div&gt;+ patrimonio: Float&lt;/div&gt;&lt;div&gt;+ societàGestione: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-68">
+          <mxGeometry y="26" width="220" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-70" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-68">
+          <mxGeometry y="170" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-71" value="&lt;div&gt;+ getIdFondo(): int&lt;/div&gt;&lt;div&gt;+ setIdFondo(idFondo: int): void&lt;/div&gt;&lt;div&gt;+ getIsin(): String&lt;/div&gt;&lt;div&gt;+ setIsin(isin: String): void&lt;/div&gt;&lt;div&gt;+ getNome(): String&lt;/div&gt;&lt;div&gt;+ setNome(nome: String): void&lt;/div&gt;&lt;div&gt;+ getCategoria(): String&lt;/div&gt;&lt;div&gt;+ setCategoria(categoria: String): void&lt;/div&gt;&lt;div&gt;+ getValuta(): String&lt;/div&gt;&lt;div&gt;+ setValuta(valuta: String): void&lt;/div&gt;&lt;div&gt;+ getDataLancio(): Date&lt;/div&gt;&lt;div&gt;+ setDataLancio(dataLancio: Date): void&lt;/div&gt;&lt;div&gt;+ getRischio(): int&lt;/div&gt;&lt;div&gt;+ setRischio(rischio: int): void&lt;/div&gt;&lt;div&gt;+ getPatrimonio(): Double&lt;/div&gt;&lt;div&gt;+ setPatrimonio(patrimonio: Double): void&lt;/div&gt;&lt;div&gt;+ getSocietàGestione(): String&lt;/div&gt;&lt;div&gt;+ setSocietàGestione(societàGestione: String): void&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-68">
+          <mxGeometry y="178" width="220" height="322" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-72" value="fondo" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;exitX=1.004;exitY=0.416;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="pQTNSRN1XWMmVa6OmcXm-67" target="pQTNSRN1XWMmVa6OmcXm-69">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="1200" y="1730" as="sourcePoint" />
+            <mxPoint x="1360" y="1730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-73" value="0..*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-72">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-74" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="1230" y="1710" as="geometry">
+            <mxPoint x="39" y="98" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-75" value="iban" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;exitX=0;exitY=0.327;exitDx=0;exitDy=0;labelBackgroundColor=none;exitPerimeter=0;entryX=-0.004;entryY=0.296;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry x="-0.913" y="-3" relative="1" as="geometry">
+            <mxPoint x="959.9999999999998" y="1797.0080000000003" as="sourcePoint" />
+            <mxPoint x="959.2799999999997" y="900.8239999999998" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="960" y="1800" />
+              <mxPoint x="910" y="1800" />
+              <mxPoint x="910" y="900" />
+              <mxPoint x="959" y="900" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-76" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-75">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-20" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-77" value="0..*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="990" y="1480" as="geometry">
+            <mxPoint x="-51" y="-560" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-82" value="Carta" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1650" y="1810" width="210" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-83" value="+ idCarta: int&lt;div&gt;+ tipo: String&lt;/div&gt;&lt;div&gt;+ userId: int&lt;/div&gt;&lt;div&gt;+ numeroCarta: int&lt;/div&gt;&lt;div&gt;+ cvv: int&lt;/div&gt;&lt;div&gt;+ circuito: String&lt;/div&gt;&lt;div&gt;+ dataScadenza: Date&lt;/div&gt;&lt;div&gt;+ limiteSpesa: float&lt;/div&gt;&lt;div&gt;+ attiva: boolean&lt;/div&gt;&lt;div&gt;+ iban: Iban&lt;/div&gt;&lt;div&gt;+ movimenti: List&amp;lt;Movimento&amp;gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-82">
+          <mxGeometry y="26" width="210" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-84" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-82">
+          <mxGeometry y="210" width="210" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-85" value="&lt;div&gt;+ getIdCarta(): int&lt;/div&gt;&lt;div&gt;+ setIdCarta(idCarta: int): void&lt;/div&gt;&lt;div&gt;+ getTipo(): String&lt;/div&gt;&lt;div&gt;+ setTipo(tipo: String): void&lt;/div&gt;&lt;div&gt;+ getUserId(): int&lt;/div&gt;&lt;div&gt;+ setUserId(userId: int): void&lt;/div&gt;&lt;div&gt;+ getMovimenti(): List&amp;lt;Movimento&amp;gt;&lt;/div&gt;&lt;div&gt;+ setMovimenti(movimenti: List&amp;lt;Movimento&amp;gt;): void&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-82">
+          <mxGeometry y="218" width="210" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-86" value="iban" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;labelBackgroundColor=none;" edge="1" parent="1" source="pQTNSRN1XWMmVa6OmcXm-83">
+          <mxGeometry x="-0.9689" y="-38" relative="1" as="geometry">
+            <mxPoint x="1540" y="1770" as="sourcePoint" />
+            <mxPoint x="1050" y="840" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1570" y="1928" />
+              <mxPoint x="1570" y="720" />
+              <mxPoint x="1050" y="720" />
+              <mxPoint x="1050" y="838" />
+            </Array>
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-87" value="1..*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-86">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-30" y="21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-88" value="n" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="1520" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-89" value="movimenti" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;labelBackgroundColor=none;" edge="1" parent="1">
+          <mxGeometry x="-0.9794" y="5" relative="1" as="geometry">
+            <mxPoint x="1755" y="2170" as="sourcePoint" />
+            <mxPoint x="970" y="1243" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1755" y="2230" />
+              <mxPoint x="860" y="2230" />
+              <mxPoint x="860" y="1243" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-90" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-89">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-15" y="42" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-91" value="0..*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="950" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-99" value="1" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="810" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-100" value="1,2" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="1060" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-101" value="Prestito" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1923" y="840" width="237" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-102" value="+ idPrestito: int&lt;div&gt;+ importoTotale: float&lt;/div&gt;&lt;div&gt;+ importoRimanente: float&lt;/div&gt;&lt;div&gt;+ tassoInteresse: float&lt;/div&gt;&lt;div&gt;+ duratamesi: int&lt;/div&gt;&lt;div&gt;+ dataErogazione: Date&lt;/div&gt;&lt;div&gt;+ dataScadenza: Date&lt;/div&gt;&lt;div&gt;+ rataMensile: float&lt;/div&gt;&lt;div&gt;+ stato: String&lt;/div&gt;&lt;div&gt;+ Iban: iban&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-101">
+          <mxGeometry y="26" width="237" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-103" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-101">
+          <mxGeometry y="190" width="237" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-104" value="&lt;div&gt;+ getIdPrestito(): int&lt;/div&gt;&lt;div&gt;+ setIdPrestito(idPrestito: int): void&lt;/div&gt;&lt;div&gt;+ getImportoTotale(): float&lt;/div&gt;&lt;div&gt;+ setImportoTotale(importoTotale: float): void&lt;/div&gt;&lt;div&gt;+ getImportoRimanente(): float&lt;/div&gt;&lt;div&gt;+ setImportoRimanente(importoRimanente: float): void&lt;/div&gt;&lt;div&gt;+ getTassoInteresse(): float&lt;/div&gt;&lt;div&gt;+ setTassoInteresse(tassoInteresse: float): void&lt;/div&gt;&lt;div&gt;+ getDuratamesi(): int&lt;/div&gt;&lt;div&gt;+ setDuratamesi(duratamesi: int): void&lt;/div&gt;&lt;div&gt;+ getDataErogazione(): Date&lt;/div&gt;&lt;div&gt;+ setDataErogazione(dataErogazione: Date): void&lt;/div&gt;&lt;div&gt;+ getDataScadenza(): Date&lt;/div&gt;&lt;div&gt;+ setDataScadenza(dataScadenza: Date): void&lt;/div&gt;&lt;div&gt;+ getRataMensile(): float&lt;/div&gt;&lt;div&gt;+ setRataMensile(rataMensile: float): void&lt;/div&gt;&lt;div&gt;+ getStato(): String&lt;/div&gt;&lt;div&gt;+ setStato(stato: String): void&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-101">
+          <mxGeometry y="198" width="237" height="362" as="geometry" />
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-105" value="prestiti" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;exitX=0.998;exitY=0.962;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="pQTNSRN1XWMmVa6OmcXm-2">
+          <mxGeometry x="-0.7984" relative="1" as="geometry">
+            <mxPoint x="1590" y="1090" as="sourcePoint" />
+            <mxPoint x="1920" y="1140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1519" y="1140" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-106" value="0..*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-105">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="1" y="39" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-107" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="1730" y="1160" as="geometry">
+            <mxPoint x="180" y="-29" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-108" value="iban" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=0.894;entryY=-0.008;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.547;exitY=0.001;exitDx=0;exitDy=0;exitPerimeter=0;labelBackgroundColor=none;" edge="1" parent="1" source="pQTNSRN1XWMmVa6OmcXm-101" target="pQTNSRN1XWMmVa6OmcXm-5">
+          <mxGeometry x="-0.9449" y="23" relative="1" as="geometry">
+            <mxPoint x="2052.8571428571427" y="770" as="sourcePoint" />
+            <mxPoint x="1570" y="1040" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2053" y="750" />
+              <mxPoint x="1121" y="750" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-109" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="pQTNSRN1XWMmVa6OmcXm-108">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="7" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pQTNSRN1XWMmVa6OmcXm-110" value="0..*" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=none;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="2110" y="830" as="geometry">
+            <mxPoint x="-983" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

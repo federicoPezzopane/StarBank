@@ -1,0 +1,104 @@
+<div class="register-container">
+
+  <div class="side-card" [ngClass]="{'side-card-step1': isStep1, 'side-card-step23': isStep23}">
+    <ng-container *ngIf="isStep1; else step23Content">
+      <h1 class="gradient-text">
+        Registrati ora
+      </h1>
+      <p>
+        Ci vuole poco per iniziare. Entra a far parte della nostra community e sfrutta tutte le funzionalità esclusive.
+        La tua avventura inizia qui!
+      </p>
+      <img src="assets/rocket-launch.gif" alt="Rocket Launch Animation" class="side-image" />
+    </ng-container>
+
+    <ng-template #step23Content>
+      <h1 class="gradient-text">Benvenuto!</h1>
+      <p>Completa la registrazione per partire verso nuove mete.</p>
+    </ng-template>
+  </div>
+
+  <div class="form-card" [ngClass]="{'form-card-step1': isStep1, 'form-card-step23': isStep23}">
+
+    
+    <form *ngIf="step === 1" [formGroup]="anagraficaForm" (ngSubmit)="goToStep(2)">
+      
+      <div class="form-group full-width">
+        <label for="nome">Nome</label>
+        <input id="nome" class="form-control" formControlName="nome" required />
+      </div>
+
+      <div class="form-group full-width">
+        <label for="cognome">Cognome</label>
+        <input id="cognome" class="form-control" formControlName="cognome" required />
+      </div>
+
+      <div class="form-group full-width">
+        <label for="codiceFiscale">Codice Fiscale</label>
+        <input id="codiceFiscale" class="form-control" formControlName="codiceFiscale" maxlength="16" minlength="16" required />
+      </div>
+
+      <div class="form-group full-width">
+        <label for="eta">Età</label>
+        <input id="eta" type="number" min="18" class="form-control" formControlName="eta" required />
+      </div>
+
+      <div class="form-group full-width">
+        <label for="indirizzoResidenza">Indirizzo di residenza</label>
+        <input id="indirizzoResidenza" class="form-control" formControlName="indirizzoResidenza" required />
+      </div>
+
+      <div class="form-group full-width">
+        <label for="regione">Regione</label>
+        <select id="regione" class="form-control" formControlName="regione" required>
+          <option value="" disabled selected>Seleziona una regione</option>
+          <option *ngFor="let r of regioni" [value]="r.idRegione">{{ r.nomeRegione }}</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="provincia">Provincia</label>
+        <select id="provincia" class="form-control" formControlName="provincia" required>
+          <option value="" disabled selected>Seleziona una provincia</option>
+          <option *ngFor="let p of province" [ngValue]="p">{{ p.nomeProvincia }}</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="comune">Comune</label>
+        <select id="comune" class="form-control" formControlName="comune" required>
+          <option value="" disabled selected>Seleziona un comune</option>
+          <option *ngFor="let c of comuni" [ngValue]="c">{{ c.nomeComune }}</option>
+        </select>
+      </div>
+
+      <button mat-raised-button color="warn" type="submit" [disabled]="!anagraficaForm.valid">Avanti</button>
+    </form>
+
+  
+    <form *ngIf="step === 2" [formGroup]="credenzialiForm" (ngSubmit)="submit()">
+      <div class="form-group full-width">
+        <label for="username">Username</label>
+        <input id="username" class="form-control" formControlName="username" required />
+      </div>
+
+      <div class="form-group full-width">
+        <label for="password">Password</label>
+        <input id="password" type="password" class="form-control" formControlName="password" required />
+      </div>
+
+      <button mat-raised-button color="warn" type="submit" [disabled]="!credenzialiForm.valid">Registrati</button>
+      <button mat-button type="button" (click)="goToStep(1)">Indietro</button>
+    </form>
+
+   
+    <div *ngIf="step === 3" class="conferma">
+      <mat-icon color="primary" class="conferma-icon">rocket_launch</mat-icon>
+      <p>Sei pronto a partire verso le stelle!</p>
+
+     <button mat-raised-button class="transparent-red" (click)="goToLogin()">Vai al login</button>
+
+    </div>
+
+  </div>
+</div>
