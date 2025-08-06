@@ -561,18 +561,13 @@
     background: rgba(0, 0, 0, 0.6); // sfondo scuro
   }
 
-  .custom-dialog-panel {
-    margin: auto !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    border-radius: 12px;
-  }
+  
 
   .bonifico-dialog-panel,.custom-dialog-panel {
   position: fixed !important;
   top: 0; bottom: 0; left: 0; right: 0;
   margin: auto !important;
-  width: fit-content; /* o max-width */
+  width: fit-content; 
   height: fit-content;
   z-index: 1500 !important;
   border-radius: 12px;
@@ -605,3 +600,44 @@
   background-color: rgba(0,0,0,0.6) !important; /* sfondo scuro */
 }
 
+.form-invia-btn {
+  background-color: transparent !important;
+  color: #b71c1c !important;
+  border: 2px solid #b71c1c;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 0;
+  min-width: 120px;
+
+  &:hover:not(:disabled) {
+    color: white !important;
+    background: linear-gradient(90deg, #ffec6d, #ffd700, #fffacd);
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    animation: glowGradient 3s ease-in-out infinite;
+    box-shadow: 0 0 12px #ffd700aa;
+    border-color: transparent;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #eee !important;
+    color: #999 !important;
+    border-color: #999 !important;
+  }
+}
+
+@keyframes glowGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

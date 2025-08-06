@@ -1,0 +1,105 @@
+@use '@angular/material' as mat;
+
+.dialog-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #ff3b3b;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.dialog-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.dialog-actions {
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.form-modifica-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1.5rem; // Aggiunto padding al form stesso per un migliore spazio interno
+}
+
+.form-modifica-info mat-form-field {
+  width: 100%;
+  max-width: 400px;
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0.25rem;
+  }
+
+  .mat-form-field-outline {
+    border-radius: 8px;
+  }
+
+  .mat-form-field-flex {
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  &.mat-focused .mat-form-field-outline {
+    border-color: #ff3b3b;
+  }
+
+  .mat-form-field-label {
+    color: #b71c1c;
+    font-weight: 600;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+// Stili per il pannello del dialog, come discusso in precedenza
+.modifica-informazioni-dialog-panel {
+  border-radius: 8px !important;
+  box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12) !important;
+  padding: 24px !important;
+  max-width: 90vw !important; 
+}
+
+// Stili per il pannello delle opzioni delle mat-select
+::ng-deep .mat-mdc-select-panel {
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+::ng-deep .mat-option {
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+::ng-deep .mat-option:hover {
+  background-color: #ffe5e5 !important;
+}
+
+::ng-deep .mat-option.mat-selected {
+  background-color: #ffcccc !important;
+  color: #b71c1c !important;
+  font-weight: 600;
+}
+
+

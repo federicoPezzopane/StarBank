@@ -9,45 +9,44 @@ import { Provincia } from 'src/model/provincia.model';
 import { Comune } from 'src/model/comune.model';
 import { Regione } from 'src/model/regione.model';
 import { Movimento } from 'src/model/movimento.model';
+import { UtenteDTO } from '../dto/UtenteDTO.model';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtenteService {
-  effettuaBonifico(result: void): Observable<Movimento> {
-     const headers = new HttpHeaders({
-    'Authorization': `Bearer ${this.cookieService.get('token')}`,
-    'Content-Type': 'application/json'
-  });
-  return this.http.post<Movimento>(`${this.baseUrl}/findAll`, { headers });
-  }
+  private baseUrl = environment.apiBaseUrl + '/utente';
+
+  
   getAllUtenti(): Observable<Utente[]> {
-    const headers = new HttpHeaders({
-    'Authorization': `Bearer ${this.cookieService.get('token')}`,
-    'Content-Type': 'application/json'
-  });
-  return this.http.get<Utente[]>(`${this.baseUrl}/findAll`, { headers });
+  
+  return this.http.get<Utente[]>(`${this.baseUrl}/findAll`, { headers: this.getHeaders()  });
   }
 
 registraUtente(utente: any): Observable<Utente> {
-  const headers = new HttpHeaders({
-    'Authorization': `Bearer ${this.cookieService.get('token')}`,
-    'Content-Type': 'application/json'
-  });
-  return this.http.post<Utente>(`${this.baseUrl}/register`, utente, { headers });
+ 
+  return this.http.post<Utente>(`${this.baseUrl}/register`, utente, { headers: this.getHeaders() });
 }
 
-   private baseUrl = environment.apiBaseUrl + '/utente';
 
+aggiornaUtente(utenteAggiornato: UtenteDTO): Observable<any> {
+  return this.http.put(`${this.baseUrl}/update`, utenteAggiornato, {headers: this.getHeaders()});
+}
+
+   
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
   getUtenteById(id: number): Observable<Utente> {
-    const token = this.cookieService.get('token');
-
-  const headers = new HttpHeaders({
-    'Authorization': `Bearer ${token}`
-  });
-    return this.http.get<Utente>(`${this.baseUrl}/findById/${id}`,{ headers });
+    return this.http.get<Utente>(`${this.baseUrl}/findById/${id}`,{  headers: this.getHeaders()  });
   }
+
+
+  private getHeaders():HttpHeaders{
+   const headers = new HttpHeaders({
+    'Authorization': `Bearer ${this.cookieService.get('token')}`,
+    'Content-Type': 'application/json'
+  });
+  return headers;
+}
 }

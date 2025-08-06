@@ -1,16 +1,4 @@
 @use '@angular/material' as mat;
-::ng-deep .mat-mdc-select-panel.custom-select-panel {
-  width: auto !important;
-  max-width: 500px !important;
-  min-width: 280px !important;
-  border-radius: 8px;
-  padding: 0;
-  background-color: #fff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
-}
 
 .bonifico-form {
   display: flex;
@@ -79,6 +67,7 @@
   padding: 1rem 1.5rem;
   width: 100%;
   max-width: 500px;
+  background-color: #fff;
 }
 
 .dialog-actions {
@@ -130,6 +119,7 @@ button {
   }
 }
 
+::ng-deep .mat-mdc-select-panel.custom-select-panel,
 ::ng-deep .mat-select-panel.custom-select-panel {
   font-family: 'Montserrat', sans-serif;
   min-width: 300px !important;

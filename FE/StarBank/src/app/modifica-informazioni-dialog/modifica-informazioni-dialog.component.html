@@ -1,0 +1,73 @@
+<h2 mat-dialog-title class="dialog-title">Modifica Informazioni</h2>
+
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="modificaForm" class="form-modifica-info">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Cognome</mat-label>
+      <input matInput formControlName="cognome" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Età</mat-label>
+      <input matInput type="number" formControlName="eta" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Codice Fiscale</mat-label>
+      <input matInput formControlName="codiceFiscale" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Indirizzo di Residenza</mat-label>
+      <input matInput formControlName="indirizzoResidenza" />
+    </mat-form-field>
+
+    <!-- Dropdown Regione -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Regione</mat-label>
+        <mat-select
+        formControlName="regione"
+        [disableOptionCentering]="true"
+        panelClass="custom-select-panel">
+        <mat-option  *ngFor="let r of regioni" [value]="r.idRegione">{{ r.nomeRegione }}</mat-option>
+      </mat-select>
+    
+    </mat-form-field>
+
+    <!-- Dropdown Provincia -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Provincia</mat-label>
+      <mat-select
+        formControlName="provincia"
+        [disableOptionCentering]="true"
+        panelClass="custom-select-panel">
+        <mat-option  *ngFor="let p of province" [value]="p.idProvincia">{{ p.nomeProvincia }}</mat-option>
+      </mat-select>      
+    </mat-form-field>
+
+    <!-- Dropdown Comune -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Comune</mat-label>
+     <mat-select
+        formControlName="comune"
+        [disableOptionCentering]="true"
+        panelClass="custom-select-panel" required [disabled]="comuni.length === 0">
+        <mat-option *ngFor="let c of comuni" [value]="c.idComune">{{ c.nomeComune }}</mat-option>
+      </mat-select>      
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+<button mat-stroked-button color="warn" mat-dialog-close>Annulla</button>
+  <button  mat-flat-button
+    class="form-invia-btn"
+    (click)="salvaModifiche()"
+    [disabled]="modificaForm.invalid">Salva</button>
+</mat-dialog-actions>

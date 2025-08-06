@@ -26,13 +26,14 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { BonificoDialogComponent } from './bonifico-dialog/bonifico-dialog.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ToastrModule } from 'ngx-toastr';
+import { ModificaInformazioniDialogComponent } from './modifica-informazioni-dialog/modifica-informazioni-dialog.component';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: true,
 };
 
 @NgModule({
-  declarations: [AppComponent,WelcomePageComponent, LoginComponent, AreaRiservataComponent, RegisterComponent, BonificoDialogComponent],
+  declarations: [AppComponent,WelcomePageComponent, LoginComponent, AreaRiservataComponent, RegisterComponent, BonificoDialogComponent, ModificaInformazioniDialogComponent],
   imports: [
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',

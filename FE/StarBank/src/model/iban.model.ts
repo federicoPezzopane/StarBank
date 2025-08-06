@@ -15,5 +15,5 @@ export interface Iban {
   investimenti?: Investimento[];
   prestiti?: Prestito[];
   carte?: Carta[];
-  movimenti?: Movimento[];
+  movimenti: Movimento[];
 }

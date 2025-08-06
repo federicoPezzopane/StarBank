@@ -2,6 +2,7 @@ package it.starbank.StarBank.controller;
 
 import it.starbank.StarBank.dto.MessageResponseDTO;
 import it.starbank.StarBank.dto.RegisterDTO;
+import it.starbank.StarBank.dto.UtenteDTO;
 import it.starbank.StarBank.entity.Iban;
 import it.starbank.StarBank.entity.Utente;
 import it.starbank.StarBank.repository.ComuneRepository;
@@ -23,15 +24,7 @@ public class UtenteController {
     @Autowired
     private UtenteService utenteService;
 
-    @Autowired
-    private IbanService ibanService;
 
-    @Autowired
-    private ComuneRepository comuneRepository;
-
-
-    @Autowired
-    private PasswordEncoder encoder;
 
 
     @PostMapping("/register")
@@ -42,34 +35,14 @@ public class UtenteController {
                     .body(new MessageResponseDTO("Error: username is already taken!"));
 
         }
-        // Create new user's account
-        Utente user = new Utente();
-        user.setNome(registerDTO.getNome());
-        user.setCognome(registerDTO.getCognome());
-        user.setEta(registerDTO.getEta());
-        user.setCodiceFiscale(registerDTO.getCodiceFiscale());
-        user.setComuneResidenza(comuneRepository.findById(registerDTO.getIdComune()).get());
-        user.setBlocked(false);
-        user.setUsername(registerDTO.getUsername());
-        user.setPassword(encoder.encode(registerDTO.getPassword()));
-        user.setFailedLogins(0);
-        user.setRoles("ROLE_USER");
-        user.setIndirizzoResidenza(registerDTO.getIndirizzoResidenza());
-    
-
-        //Imposto iban
-        Iban iban = new Iban();
-        iban.setUtente(user);
-        iban.setIban(this.ibanService.generaIbanRandom());
-        iban.setSaldoContabile(0f);
-        iban.setSaldoDisponibile(0f);
-        iban.setUtente(user);
-        user.setIban(iban);
-
-        utenteService.register(user);
-
-
+        utenteService.register(registerDTO);
         return new ResponseEntity(new MessageResponseDTO("User registered successfully!"), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<Utente> aggiornaUtente(@RequestBody UtenteDTO utenteModificato) {
+        Utente utente = utenteService.aggiornaUtente(utenteModificato);
+        return ResponseEntity.ok(utente);
     }
 
     @GetMapping("/findById/{id}")

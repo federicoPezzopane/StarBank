@@ -13,14 +13,14 @@
         <p><strong>Nome:</strong> {{ utente.nome }} {{ utente.cognome }}</p>
         <p><strong>Età:</strong> {{ utente.eta }}</p>
         <p><strong>Codice Fiscale:</strong> {{ utente.codiceFiscale }}</p>
-        <p><strong>Residenza:</strong> {{ utente.indirizzoResidenza }}, {{ utente.comuneResidenza.nomeComune }} </p>
-        <button mat-button color="primary" class="operation-btn">Modifica informazioni</button>
+        <p><strong>Residenza:</strong> {{ utente.indirizzoResidenza }}, {{ utente.comuneResidenza?.nomeComune }} </p>
+        <button mat-button color="primary" class="operation-btn" (click)="openModificaInformazioniDialog()">Modifica informazioni</button>
       </div>
 
       <div class="card investimenti-card">
         <h2 class="gradient-text">Investimenti</h2>
-        <ul *ngIf="utente.iban.investimenti.length > 0; else nessunInvestimento">
-          <li *ngFor="let investimento of utente.iban.investimenti">
+        <ul *ngIf="utente.iban?.investimenti?.length; else nessunInvestimento">
+          <li *ngFor="let investimento of utente.iban?.investimenti">
             {{ investimento.fondo.nome }} – € {{ investimento.valoreAttuale | number:'1.2-2' }}
           </li>
         </ul>
@@ -35,19 +35,19 @@
 
     <div class="main-content">
       <div class="card iban-card">
-        <h2 class="gradient-text">Conto: {{ utente.iban.iban }}</h2>
-        <p><strong>Saldo Contabile:</strong> € {{ utente.iban.saldoContabile | number:'1.2-2' }}</p>
-        <p><strong>Saldo Disponibile:</strong> € {{ utente.iban.saldoDisponibile | number:'1.2-2' }}</p>
+        <h2 class="gradient-text">Conto: {{ utente.iban?.iban }}</h2>
+        <p><strong>Saldo Contabile:</strong> € {{ utente.iban?.saldoContabile | number:'1.2-2' }}</p>
+        <p><strong>Saldo Disponibile:</strong> € {{ utente.iban?.saldoDisponibile | number:'1.2-2' }}</p>
       </div>
 
       <div class="card movimenti-card">
         <h2 class="gradient-text">Movimenti</h2>
-        <div *ngIf="utente.iban.movimenti.length === 0">
+        <div *ngIf="!utente.iban?.movimenti?.length">
           <p>Nessun movimento disponibile.</p>
         </div>
 
-        <div class="movimenti-list" *ngIf="utente.iban.movimenti.length > 0">
-          <div class="movimento-card" *ngFor="let movimento of utente.iban.movimenti">
+        <div class="movimenti-list" *ngIf="utente.iban?.movimenti?.length">
+          <div class="movimento-card" *ngFor="let movimento of utente.iban?.movimenti">
             <div class="movimento-header">
               <span class="data">{{ movimento.dataMovimento | date:'longDate' }}</span>
               <span class="tipo">{{ movimento.tipoMovimento | titlecase }}</span>
@@ -70,11 +70,11 @@
     <div class="sidebar right">
       <div class="card carte-card">
         <h2 class="gradient-text">Carte</h2>
-        <div *ngIf="utente.iban.carte.length === 0">
+        <div *ngIf="utente.iban?.carte?.length">
           <p>Nessuna carta associata.</p>
         </div>
-        <ul *ngIf="utente.iban.carte.length > 0">
-          <li *ngFor="let carta of utente.iban.carte">
+        <ul *ngIf="utente.iban?.carte?.length">
+          <li *ngFor="let carta of utente.iban?.carte">
             <strong>{{ carta.tipoCarta }}</strong> • **** **** **** {{ carta.numeroCarta.toString().slice(-4) }} ({{ carta.circuito }})
           </li>
         </ul>

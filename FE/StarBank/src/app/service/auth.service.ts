@@ -25,7 +25,7 @@ export class AuthService {
       .pipe(
         tap(res => {
           this.setCookie('token', res.token, 1);
-          this.setCookie('utenteId', res.utente.userId.toString(), 1);
+          this.setCookie('utenteId', res.utente.userId!.toString(), 1);
         })
       );
   }

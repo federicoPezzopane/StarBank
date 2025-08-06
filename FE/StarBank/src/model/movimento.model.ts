@@ -8,4 +8,7 @@ export interface Movimento {
   ibanMittente?: String;
   tipoMovimento: string;
   dataMovimento: string;
+  saldoPostMovimento: string;
+  saldoPreMovimento: string;
+  descrizione: string;
 }

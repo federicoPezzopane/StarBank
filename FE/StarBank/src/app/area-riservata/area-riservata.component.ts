@@ -2,13 +2,16 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
 import { UtenteService } from '../services/utente.service';
-import { AuthService } from '../service/auth.service'; // usa il service AuthService che gestisce cookie/token
+import { AuthService } from '../service/auth.service'; 
 import { ThemeService } from '../service/theme.service';
 import { MatDialog } from '@angular/material/dialog';
 import { BonificoDialogComponent } from '../bonifico-dialog/bonifico-dialog.component';
 import { MovimentoService } from '../services/movimento.service';
 import { ToastrService } from 'ngx-toastr';
 import { NotificationService } from '../service/notification.service';
+import { ModificaInformazioniDialogComponent } from '../modifica-informazioni-dialog/modifica-informazioni-dialog.component';
+import { Utente } from 'src/model/utente.model';
+import { UtenteDTO } from '../dto/UtenteDTO.model';
 
 @Component({
   selector: 'app-area-riservata',
@@ -16,10 +19,11 @@ import { NotificationService } from '../service/notification.service';
   styleUrls: ['./area-riservata.component.scss']
 })
 export class AreaRiservataComponent implements OnInit {
-  utente: any;
+  utente: Utente=new Utente();
   isLoading = false;
   isDarkTheme = false;
   showWelcomeToast: boolean = true;
+  utenteDto:UtenteDTO = new UtenteDTO();
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -39,15 +43,23 @@ ibanMittente: string = '';
     
     
   }
+  private ordinaMovimentiPerData(): void {
+  if (this.utente.iban?.movimenti?.length) {
+   this.utente.iban.movimenti.sort((a, b) => {
+  return b.idMovimento - a.idMovimento;
+});
+  }
+}
+
 
   openBonificoDialog() {
   this.utenteService.getAllUtenti().subscribe((utenti) => {
     const dialogRef = this.dialog.open(BonificoDialogComponent, {
       width: '500px',
-      disableClose: true, // opzionale: obbliga l’utente a usare i pulsanti per chiudere
-      autoFocus: false, // opzionale
-      ariaLabel: 'Modale per bonifico', // accessibilità
-      panelClass: 'bonifico-dialog-panel',
+      disableClose: true, 
+      autoFocus: false, 
+      ariaLabel: 'Modale per bonifico', 
+      panelClass: 'custom-dialog-panel',
   hasBackdrop: true,
   backdropClass: 'custom-dialog-backdrop',
       data: { utenti, ibanMittente: this.utente.iban }
@@ -63,6 +75,35 @@ ibanMittente: string = '';
     });
   });
   
+}
+openModificaInformazioniDialog(): void {
+  const dialogRef = this.dialog.open(ModificaInformazioniDialogComponent, {
+      width: '500px',
+      panelClass: 'custom-dialog-panel',
+      backdropClass: 'custom-dialog-backdrop',
+      disableClose: true,
+      autoFocus: false,
+      ariaLabel: 'Modale per modifica info', 
+    data: { 
+      nome: this.utente.nome,
+      cognome: this.utente.cognome,
+      eta: this.utente.eta,
+      indirizzoResidenza: this.utente.indirizzoResidenza,
+      comuneResidenza: this.utente.comuneResidenza,
+      codiceFiscale: this.utente.codiceFiscale
+    }
+  });
+
+
+  dialogRef.afterClosed().subscribe((result) => {
+    if (result) {
+      result.userId = this.utente.userId
+      this.utenteService.aggiornaUtente(result).subscribe(() => {
+      this.notificationService.showSuccess('Informazioni aggiornate con successo!');
+      this.refreshDatiUtente();
+      });
+    }
+  });
 }
   refreshDatiUtente() {
     this.loadUtente()
@@ -92,6 +133,9 @@ ibanMittente: string = '';
     this.utenteService.getUtenteById(utenteId).subscribe({
       next: (data) => {
         this.utente = data;
+        this.ordinaMovimentiPerData();
+        console.log(this.utente.iban?.movimenti);
+
         this.isLoading = false;
         if (this.utente && this.utente.iban && this.utente.iban.iban) {
         this.ibanMittente = this.utente.iban.iban;
