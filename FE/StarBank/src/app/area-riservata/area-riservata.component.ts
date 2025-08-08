@@ -12,6 +12,11 @@ import { NotificationService } from '../service/notification.service';
 import { ModificaInformazioniDialogComponent } from '../modifica-informazioni-dialog/modifica-informazioni-dialog.component';
 import { Utente } from 'src/model/utente.model';
 import { UtenteDTO } from '../dto/UtenteDTO.model';
+import { RichiestaCartaDialogComponent } from '../richiesta-carta-dialog/richiesta-carta-dialog.component';
+import { CartaService } from '../services/carta.service';
+import { ConfermaCancellazioneCartaDialogComponent } from '../conferma-cancellazione-carta-dialog/conferma-cancellazione-carta-dialog.component';
+import { Carta } from 'src/model/carta.model';
+
 
 @Component({
   selector: 'app-area-riservata',
@@ -22,6 +27,7 @@ export class AreaRiservataComponent implements OnInit {
   utente: Utente=new Utente();
   isLoading = false;
   isDarkTheme = false;
+  canRequestCard = false;
   showWelcomeToast: boolean = true;
   utenteDto:UtenteDTO = new UtenteDTO();
 
@@ -33,7 +39,8 @@ export class AreaRiservataComponent implements OnInit {
     private themeService: ThemeService,
     private dialog: MatDialog,
     private movimentoService: MovimentoService,
-    public notificationService: NotificationService
+    public notificationService: NotificationService,
+    private cartaService: CartaService
   ) {}
 ibanMittente: string = ''; 
   ngOnInit(): void {
@@ -50,7 +57,9 @@ ibanMittente: string = '';
 });
   }
 }
-
+public getUtente():Utente{
+  return this.utente;
+}
 
   openBonificoDialog() {
   this.utenteService.getAllUtenti().subscribe((utenti) => {
@@ -105,6 +114,46 @@ openModificaInformazioniDialog(): void {
     }
   });
 }
+
+openConfermaCancellazioneCartaDialog(carta: Carta): void {
+  const dialogRef = this.dialog.open(ConfermaCancellazioneCartaDialogComponent, {
+    width: '400px',
+    disableClose: true,
+    autoFocus: false,
+    ariaLabel: 'Conferma cancellazione carta',
+    panelClass: 'custom-dialog-panel',
+    backdropClass: 'custom-dialog-backdrop',
+    data: { numeroCarta: String(carta.numeroCarta), idCarta: carta.idCarta }
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+       this.notificationService.showSuccess('Informazioni aggiornate con successo!');
+      this.refreshDatiUtente();
+     }
+  });
+}
+
+
+
+openRichiestaCartaDialog() {
+  const dialogRef = this.dialog.open(RichiestaCartaDialogComponent, {
+    width: '400px',
+    disableClose: true,
+    autoFocus: false,
+    ariaLabel: 'Richiesta nuova carta',
+    panelClass: 'custom-dialog-panel', 
+     backdropClass: 'custom-dialog-backdrop',
+    data: { utenteId: this.utente.userId }});
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      
+      this.loadUtente();
+      this.notificationService.showSuccess('Carta richiesta con successo!');
+    }
+  });
+}
   refreshDatiUtente() {
     this.loadUtente()
   }
@@ -118,7 +167,7 @@ openModificaInformazioniDialog(): void {
     }
   }
 
-  loadUtente() {
+  async loadUtente() {
     this.isLoading = true;
 
     const utenteIdStr = this.authService.getUtenteId();
@@ -130,21 +179,21 @@ openModificaInformazioniDialog(): void {
       return;
     }
 
-    this.utenteService.getUtenteById(utenteId).subscribe({
+    await this.utenteService.getUtenteById(utenteId).subscribe({
       next: (data) => {
         this.utente = data;
         this.ordinaMovimentiPerData();
-        console.log(this.utente.iban?.movimenti);
-
         this.isLoading = false;
         if (this.utente && this.utente.iban && this.utente.iban.iban) {
         this.ibanMittente = this.utente.iban.iban;
       }
       if(this.showWelcomeToast==true){
-        console.log(this.showWelcomeToast)
       this.notificationService.showInfo("Benvenuto," + this.utente.nome,"Accesso")
       this.showWelcomeToast=false;
     }
+   
+    this.canRequestCard = this.utente.iban!.carte!.length>2
+ 
       
       },
       error: (err) => {

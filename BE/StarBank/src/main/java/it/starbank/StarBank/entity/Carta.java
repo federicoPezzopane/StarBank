@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.Where;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Entity(name="carta")
@@ -18,7 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Carta {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_carta")
     private int idCarta;
 
@@ -27,13 +27,22 @@ public class Carta {
 
 
     @Column(name = "numero_carta")
-    private int numeroCarta;
+    private long numeroCarta;
 
     @Column(name = "cvv")
     private int cvv;
 
     @Column(name = "circuito")
     private String circuito;
+
+    @Column(name = "data_scadenza")
+    private Date dataScadenza;
+
+    @Column(name = "limite_spesa")
+    private double limiteSpesa;
+
+    @Column(name = "attiva")
+    private boolean attiva;
 
     @ManyToOne
     @JoinColumn(name = "iban_id", referencedColumnName = "iban_id")

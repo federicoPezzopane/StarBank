@@ -27,13 +27,15 @@ import { BonificoDialogComponent } from './bonifico-dialog/bonifico-dialog.compo
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ToastrModule } from 'ngx-toastr';
 import { ModificaInformazioniDialogComponent } from './modifica-informazioni-dialog/modifica-informazioni-dialog.component';
+import { RichiestaCartaDialogComponent } from './richiesta-carta-dialog/richiesta-carta-dialog.component';
+import { ConfermaCancellazioneCartaDialogComponent } from './conferma-cancellazione-carta-dialog/conferma-cancellazione-carta-dialog.component';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: true,
 };
 
 @NgModule({
-  declarations: [AppComponent,WelcomePageComponent, LoginComponent, AreaRiservataComponent, RegisterComponent, BonificoDialogComponent, ModificaInformazioniDialogComponent],
+  declarations: [AppComponent,WelcomePageComponent, LoginComponent, AreaRiservataComponent, RegisterComponent, BonificoDialogComponent, ModificaInformazioniDialogComponent, RichiestaCartaDialogComponent, ConfermaCancellazioneCartaDialogComponent],
   imports: [
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',

@@ -70,15 +70,23 @@
     <div class="sidebar right">
       <div class="card carte-card">
         <h2 class="gradient-text">Carte</h2>
-        <div *ngIf="utente.iban?.carte?.length">
+        <div *ngIf="utente.iban?.carte?.length===0">
           <p>Nessuna carta associata.</p>
         </div>
         <ul *ngIf="utente.iban?.carte?.length">
           <li *ngFor="let carta of utente.iban?.carte">
             <strong>{{ carta.tipoCarta }}</strong> • **** **** **** {{ carta.numeroCarta.toString().slice(-4) }} ({{ carta.circuito }})
+            <button mat-icon-button color="warn" aria-label="Cancella carta" (click)="openConfermaCancellazioneCartaDialog(carta)">
+            <mat-icon>remove_circle</mat-icon>
+             </button>
           </li>
         </ul>
-        <button mat-button color="primary" class="operation-btn">Richiedi una nuova carta</button>
+       <button mat-button color="primary" class="operation-btn"
+  (click)="openRichiestaCartaDialog()" 
+    [disabled]="canRequestCard">
+  Richiedi una nuova carta
+</button>
+
       </div>
 
       <div class="card operazioni-card">

@@ -1,0 +1,24 @@
+<h2 mat-dialog-title class="dialog-title">Richiedi una nuova carta</h2>
+
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="cartaForm" class="form-modifica-info">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Tipo Carta</mat-label>
+     <mat-select
+        formControlName="tipoCarta"
+        [disableOptionCentering]="true"
+        panelClass="custom-select-panel" >
+        <mat-option value="CREDITO">Carta di Credito</mat-option>
+        <mat-option value="DEBITO">Carta di Debito</mat-option>
+      </mat-select> 
+      
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-stroked-button color="warn" mat-dialog-close>Annulla</button>
+  <button class="form-invia-btn" mat-flat-button color="primary" [disabled]="cartaForm.invalid" (click)="richiediCarta()">
+    Richiedi
+  </button>
+</mat-dialog-actions>

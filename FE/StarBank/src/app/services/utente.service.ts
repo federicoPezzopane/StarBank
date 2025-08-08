@@ -10,6 +10,7 @@ import { Comune } from 'src/model/comune.model';
 import { Regione } from 'src/model/regione.model';
 import { Movimento } from 'src/model/movimento.model';
 import { UtenteDTO } from '../dto/UtenteDTO.model';
+import { AuthService } from '../service/auth.service';
 
 
 @Injectable({
@@ -21,32 +22,26 @@ export class UtenteService {
   
   getAllUtenti(): Observable<Utente[]> {
   
-  return this.http.get<Utente[]>(`${this.baseUrl}/findAll`, { headers: this.getHeaders()  });
+  return this.http.get<Utente[]>(`${this.baseUrl}/findAll`, { headers: this.authService.getHeaders()  });
   }
 
 registraUtente(utente: any): Observable<Utente> {
  
-  return this.http.post<Utente>(`${this.baseUrl}/register`, utente, { headers: this.getHeaders() });
+  return this.http.post<Utente>(`${this.baseUrl}/register`, utente, { headers:this.authService.getHeaders() });
 }
 
 
 aggiornaUtente(utenteAggiornato: UtenteDTO): Observable<any> {
-  return this.http.put(`${this.baseUrl}/update`, utenteAggiornato, {headers: this.getHeaders()});
+  return this.http.put(`${this.baseUrl}/update`, utenteAggiornato, {headers: this.authService.getHeaders()});
 }
 
    
-  constructor(private http: HttpClient, private cookieService: CookieService) {}
+  constructor(private http: HttpClient, private authService:AuthService) {}
 
   getUtenteById(id: number): Observable<Utente> {
-    return this.http.get<Utente>(`${this.baseUrl}/findById/${id}`,{  headers: this.getHeaders()  });
+    return this.http.get<Utente>(`${this.baseUrl}/findById/${id}`,{  headers: this.authService.getHeaders()  });
   }
 
 
-  private getHeaders():HttpHeaders{
-   const headers = new HttpHeaders({
-    'Authorization': `Bearer ${this.cookieService.get('token')}`,
-    'Content-Type': 'application/json'
-  });
-  return headers;
-}
+ 
 }

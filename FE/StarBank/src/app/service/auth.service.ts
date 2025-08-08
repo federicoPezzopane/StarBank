@@ -1,11 +1,12 @@
 import { Injectable, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Utente } from 'src/model/utente.model';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private cookieService: CookieService
   ) {}
 
   login(username: string, password: string): Observable<{ token: string, utente: Utente }> {
@@ -64,6 +66,14 @@ export class AuthService {
   this.document.cookie = `${name}=; expires=${expires}; path=/area-riservata`;
   this.document.cookie = `${name}=; expires=${expires}; path=/login`;
   this.document.cookie = `${name}=; expires=${expires}; path=`;
+}
+
+ public getHeaders():HttpHeaders{
+   const headers = new HttpHeaders({
+    'Authorization': `Bearer ${this.cookieService.get('token')}`,
+    'Content-Type': 'application/json'
+  });
+  return headers;
 }
 
 }

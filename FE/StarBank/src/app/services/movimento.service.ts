@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Movimento } from 'src/model/movimento.model';
-import { CookieService } from 'ngx-cookie-service';
+import { AuthService } from '../service/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +11,13 @@ import { CookieService } from 'ngx-cookie-service';
 export class MovimentoService {
   private baseUrl = environment.apiBaseUrl + '/movimento';
 
-  constructor(private http: HttpClient, private cookieService: CookieService) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   effettuaBonifico(bonificoData: any,ibanMittente: string): Observable<Movimento> {
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.cookieService.get('token')}`,
-      'Content-Type': 'application/json'
-    });
-    const body = {
+       const body = {
     ...bonificoData,
     ibanMittente: ibanMittente
   };
-    return this.http.post<Movimento>(`${this.baseUrl}/addMovimento`, body, { headers });
+    return this.http.post<Movimento>(`${this.baseUrl}/addMovimento`, body, { headers : this.authService.getHeaders() });
   }
 }
