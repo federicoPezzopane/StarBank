@@ -276,3 +276,47 @@
     background-color: #e62e2e;
   }
 }
+.carta-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.carta-info {
+  flex: 1;
+  font-size: 1rem;
+  color: #444;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.carta-remove-btn {
+  background: none !important;
+  border-radius: 0 !important;
+  padding: 0;
+  min-width: 0;
+  width: auto;
+  height: auto;
+  line-height: 1;
+}
+
+.carta-remove-btn,
+.carta-remove-btn:hover,
+.carta-remove-btn:focus,
+.carta-remove-btn:active {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0; /* o poco padding se vuoi */
+}
+
+button.mat-icon-button:hover,
+button.mat-icon-button:focus {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+

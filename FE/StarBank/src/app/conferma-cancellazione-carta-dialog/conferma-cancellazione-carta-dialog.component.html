@@ -1,0 +1,12 @@
+<h2 mat-dialog-title class="dialog-title gradient-text">Conferma Cancellazione</h2>
+
+<mat-dialog-content class="dialog-content">
+  <p class="dialog-text">
+    Sei sicuro di voler cancellare la carta **** **** **** {{ data.numeroCarta.slice(-4) }}?
+  </p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-stroked-button mat-dialog-close (click)="annulla()">No</button>
+  <button mat-flat-button color="warn" (click)="conferma()">Sì</button>
+</mat-dialog-actions>
