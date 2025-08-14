@@ -1,5 +1,7 @@
 <h2 mat-dialog-title class="dialog-title">Modifica Informazioni</h2>
-
+<div *ngIf="isLoading" class="loading-overlay">
+  <mat-icon class="loading-spinner rainbow-star">star</mat-icon>
+</div>
 <mat-dialog-content class="dialog-content">
   <form [formGroup]="modificaForm" class="form-modifica-info">
     <mat-form-field appearance="outline" class="full-width">
@@ -27,7 +29,7 @@
       <input matInput formControlName="indirizzoResidenza" />
     </mat-form-field>
 
-    <!-- Dropdown Regione -->
+   
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Regione</mat-label>
         <mat-select
@@ -39,7 +41,7 @@
     
     </mat-form-field>
 
-    <!-- Dropdown Provincia -->
+  
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Provincia</mat-label>
       <mat-select
@@ -50,7 +52,7 @@
       </mat-select>      
     </mat-form-field>
 
-    <!-- Dropdown Comune -->
+  
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Comune</mat-label>
      <mat-select

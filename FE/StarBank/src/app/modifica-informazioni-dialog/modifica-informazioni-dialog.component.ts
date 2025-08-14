@@ -16,6 +16,7 @@ export class ModificaInformazioniDialogComponent implements OnInit {
   regioni: Regione[] = [];
   province: Provincia[] = [];
   comuni: Comune[] = [];
+  isLoading: boolean=true;
   constructor(
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<ModificaInformazioniDialogComponent>,
@@ -24,6 +25,7 @@ export class ModificaInformazioniDialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    
     this.modificaForm = this.fb.group({
       nome: [this.data.nome, Validators.required],
       cognome: [this.data.cognome, Validators.required],
@@ -84,6 +86,7 @@ private preselectComune(comuneToSelect: Comune): void {
     
       }
     }
+    this.isLoading = false;
   }
 
   onRegioneChange(idRegione: number) {
@@ -100,6 +103,7 @@ private preselectComune(comuneToSelect: Comune): void {
   console.log(this.comuni)
   this.modificaForm.get('comune')?.setValue(null); 
 }
+
 
   salvaModifiche(): void {
     if (this.modificaForm.valid) {

@@ -15,7 +15,6 @@ export class WelcomePageComponent implements OnInit, AfterViewInit {
   showWelcomeText = false;
   leftInView = false;
   rightInView = false;
-
   isDarkTheme = false;
 
   @ViewChild('leftCard', { static: true }) leftCard!: ElementRef;

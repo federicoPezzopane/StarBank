@@ -34,7 +34,7 @@ button {
   align-items: center;
   gap: 1.8rem;
   font-family: 'Montserrat', sans-serif;
-  padding: 1.5rem; // Aggiunto padding al form stesso per un migliore spazio interno
+  padding: 1.5rem; 
 }
 
 .form-modifica-info mat-form-field {
@@ -68,7 +68,7 @@ button {
   width: 100%;
 }
 
-// Stili per il pannello del dialog, come discusso in precedenza
+
 .modifica-informazioni-dialog-panel {
   border-radius: 8px !important;
   box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12) !important;
@@ -76,7 +76,7 @@ button {
   max-width: 90vw !important; 
 }
 
-// Stili per il pannello delle opzioni delle mat-select
+
 ::ng-deep .mat-mdc-select-panel {
   font-family: 'Montserrat', sans-serif;
   border-radius: 8px;
@@ -101,5 +101,4 @@ button {
   color: #b71c1c !important;
   font-weight: 600;
 }
-
 

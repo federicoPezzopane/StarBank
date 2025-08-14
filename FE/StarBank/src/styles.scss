@@ -6,10 +6,10 @@
   html, body {
     overflow-x: hidden;
   }
-  // Esempio per toast SUCCESS personalizzato
+  
 .custom-toast-success {
-  background-color: #f1c40f !important; // Giallo
-  color: white !important; // Testo bianco
+  background-color: #f1c40f !important; 
+  color: white !important; 
   border-radius: 8px !important;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
   font-weight: 500;
@@ -533,7 +533,7 @@
     }
   }
 
-  // altezza toolbar desktop e mobile
+  
   $toolbar-height-desktop: 64px;
   $toolbar-height-mobile: 56px;
 
@@ -558,7 +558,7 @@
     overflow-y: auto;
   }
   .custom-dialog-backdrop {
-    background: rgba(0, 0, 0, 0.6); // sfondo scuro
+    background: rgba(0, 0, 0, 0.6); 
   }
 
   
@@ -601,7 +601,7 @@
 
 
   .cdk-overlay-backdrop {
-  background-color: rgba(0,0,0,0.6) !important; /* sfondo scuro */
+  background-color: rgba(0,0,0,0.6) !important; 
 }
 
 .form-invia-btn {
@@ -648,11 +648,14 @@
 
 .mdc-menu-surface {
   max-width: 200px !important;
-  min-width: 0 !important;        /* permette di essere più piccolo del default, se vuoi */
+  min-width: 0 !important;        
   width: auto !important;
   box-sizing: border-box !important;
 }
 
 .mat-mdc-select-panel {
-  min-width: unset !important; /* cancella la min-width che Angular Material imposta di default */
+  min-width: unset !important; 
 }
+
+
+
