@@ -1,14 +1,10 @@
 <h2 mat-dialog-title class="dialog-title">Effettua un Bonifico</h2>
-
+<form [formGroup]="bonificoForm" class="bonifico-form">
 <mat-dialog-content class="dialog-content">
-  <form [formGroup]="bonificoForm" class="bonifico-form">
+  <form *ngIf="fase === 1" [formGroup]="bonificoForm" class="bonifico-form">
     <mat-form-field appearance="outline" class="full-width" style="max-width: 420px;">
       <mat-label>Destinatario</mat-label>
-      <mat-select
-        formControlName="destinatarioIban"
-        [disableOptionCentering]="true"
-        panelClass="custom-select-panel"
-      >
+      <mat-select formControlName="destinatarioIban" [disableOptionCentering]="true" panelClass="custom-select-panel">
         <mat-option *ngFor="let u of utenti" [value]="u.iban.iban">
           {{ u.nome }} {{ u.cognome }} – {{ u.iban.iban }}
         </mat-option>
@@ -25,16 +21,29 @@
       <input matInput formControlName="descrizione" />
     </mat-form-field>
   </form>
+
+
+  <div *ngIf="fase === 2" class="riepilogo-form">
+    <p><strong>Destinatario:</strong> {{ bonificoForm.value.destinatarioIban }}</p>
+    <p><strong>Importo:</strong> € {{ bonificoForm.value.importo }}</p>
+    <p><strong>Descrizione:</strong> {{ bonificoForm.value.descrizione || 'Nessuna' }}</p>
+
+    <mat-form-field appearance="outline" class="full-width" style="max-width: 420px;">
+      <mat-label>Inserisci la tua password</mat-label>
+      <input matInput type="password" formControlName="password" />
+      <mat-error *ngIf="bonificoForm.get('password')?.invalid">Password richiesta</mat-error>
+    </mat-form-field>
+  </div>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end" class="dialog-actions">
-  <button mat-stroked-button color="warn" mat-dialog-close>Annulla</button>
-  <button
-  mat-flat-button
-  class="form-invia-btn"
-  (click)="inviaBonifico()"
-  [disabled]="bonificoForm.invalid"
->
-  Invia Bonifico
-</button>
+  <button mat-stroked-button color="warn" (click)="annulla()">Annulla</button>
+
+  <button *ngIf="fase === 1" mat-flat-button color="warn" [disabled]="bonificoForm.invalid" (click)="vaiARiepilogo()">
+    Successivo
+  </button>
+
+  <button *ngIf="fase === 2" mat-flat-button color="warn" [disabled]="!passwordValida" (click)="confermaBonifico()">
+    Conferma Bonifico
+  </button>
 </mat-dialog-actions>

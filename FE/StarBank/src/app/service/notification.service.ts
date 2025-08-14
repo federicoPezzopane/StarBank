@@ -10,7 +10,7 @@ export class NotificationService {
 
   showSuccess(message: string = 'Operazione completata con successo!', title: string = 'Successo') {
     this.toastr.success(message, title, {
-      toastClass: 'ngx-toastr custom-toast-success',
+      
       timeOut: 3000,
       closeButton: true,
       progressBar: true,

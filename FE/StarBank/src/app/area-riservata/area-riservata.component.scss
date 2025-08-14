@@ -320,3 +320,29 @@ button.mat-icon-button:focus {
   box-shadow: none !important;
 }
 
+.movimenti-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.movimenti-header h2 {
+  flex: 1;
+  text-align: center;
+}
+
+.totale-entrate, .totale-uscite {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.valore.verde {
+  color: green;
+}
+
+.valore.rosso {
+  color: red;
+}
+
+
