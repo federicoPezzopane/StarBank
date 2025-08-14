@@ -43,7 +43,7 @@
     Successivo
   </button>
 
-  <button *ngIf="fase === 2" mat-flat-button color="warn" [disabled]="!passwordValida" (click)="confermaBonifico()">
+  <button *ngIf="fase === 2" mat-flat-button color="warn" [disabled]="!passwordValida" (click)="confermaBonifico()"  class="form-invia-btn">
     Conferma Bonifico
   </button>
 </mat-dialog-actions>
