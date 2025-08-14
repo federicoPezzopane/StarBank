@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://newtomcat.life/starbank/api/v1'
+  apiBaseUrl: '#########rimosso per motivi di sicurezza####'
 };
