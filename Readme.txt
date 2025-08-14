@@ -25,7 +25,7 @@ di una ideologica banca online :
 	
 I seguenti sono i moduli in cui si divide l'applicativo :
 	-Welcome Page : Questa eè la prima pagina della banca, contiene
-		-in alto, una navbar con il logo dell'azienda sulla sinistra, a destra il bottone di login, bottone apri un conto
+		-in alto, una navbar con il logo dell'azienda sulla sinistra, a sinistra con una sidebar due pulsanti per accedere alle sezioni di login e di registrazione
 		-subito sotto un carosello con delle informazioni su ipotetiche campagne che sono al momento attive ( statiche )
 		-sotto, vari flexbox con alcune informazioni della banca ( numero clienti, in quanti paesi opera , una serie di box con ipotetiche
 		news relative alla banca stessa )
