@@ -8,6 +8,9 @@ import it.starbank.StarBank.repository.MovimentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.List;
+
 @Service
 public class MovimentoService {
     @Autowired
@@ -54,5 +57,19 @@ public class MovimentoService {
         this.movimentoRepository.save(movimentoUscente);
         this.movimentoRepository.save(movimentoEntrante);
         return movimentoUscente;
+    }
+
+    public List<Movimento> getEstrattoContoMeseCorrente(int ibanId){
+        LocalDate now = LocalDate.now();
+        LocalDate inizioMese = now.withDayOfMonth(1);
+        LocalDate fineMese = now.withDayOfMonth(now.lengthOfMonth());
+
+        List<Movimento> movimenti = movimentoRepository.findByIbanIbanIdAndDataMovimentoBetween (
+                ibanId,
+                inizioMese,
+                fineMese
+        );
+
+        return movimenti;
     }
 }

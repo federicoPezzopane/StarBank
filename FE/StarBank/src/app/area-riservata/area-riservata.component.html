@@ -41,7 +41,23 @@
       </div>
 
       <div class="card movimenti-card">
-        <h2 class="gradient-text">Movimenti</h2>
+        <div class="movimenti-header">
+  <span class="totale-entrate">
+    Totale Entrate Mese: <span class="valore verde">€ {{ entrateMese | number:'1.2-2' }}</span>
+  </span>
+
+  <h2 class="gradient-text">Movimenti</h2>
+
+  <span class="totale-uscite">
+    Totale Uscite Mese: <span class="valore rosso">€ {{ usciteMese | number:'1.2-2' }}</span>
+  </span>
+</div>
+
+        <button mat-stroked-button color="primary" class="operation-btn"
+        (click)="scaricaEstrattoConto()">
+  Scarica estratto conto mese corrente
+</button>
+
         <div *ngIf="!utente.iban?.movimenti?.length">
           <p>Nessun movimento disponibile.</p>
         </div>

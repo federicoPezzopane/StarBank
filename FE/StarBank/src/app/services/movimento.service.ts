@@ -20,4 +20,11 @@ export class MovimentoService {
   };
     return this.http.post<Movimento>(`${this.baseUrl}/addMovimento`, body, { headers : this.authService.getHeaders() });
   }
+
+  getEstrattoContoMeseCorrente(ibanId: number) {
+  return this.http.get(`${this.baseUrl}/estratto-conto/${ibanId}`, {
+    responseType: 'blob' ,
+    headers : this.authService.getHeaders()
+  });
+}
 }

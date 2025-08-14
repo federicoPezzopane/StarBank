@@ -30,6 +30,8 @@ export class AreaRiservataComponent implements OnInit {
   canRequestCard = false;
   showWelcomeToast: boolean = true;
   utenteDto:UtenteDTO = new UtenteDTO();
+  entrateMese: number = 0;
+  usciteMese: number = 0;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -60,6 +62,26 @@ ibanMittente: string = '';
 public getUtente():Utente{
   return this.utente;
 }
+calcolaEntrateUsciteMeseCorrente() {
+  const movimenti = this.utente?.iban?.movimenti || [];
+
+  const oggi = new Date();
+  const meseCorrente = oggi.getMonth(); // 0-11
+  const annoCorrente = oggi.getFullYear();
+
+  const movimentiMese = movimenti.filter(m => {
+    const data = new Date(m.dataMovimento);
+    return data.getMonth() === meseCorrente && data.getFullYear() === annoCorrente;
+  });
+
+  this.entrateMese = movimentiMese
+    .filter(m => m.importo > 0)
+    .reduce((sum, m) => sum + m.importo, 0);
+
+  this.usciteMese = movimentiMese
+    .filter(m => m.importo < 0)
+    .reduce((sum, m) => sum + Math.abs(m.importo), 0);
+}
 
   openBonificoDialog() {
   this.utenteService.getAllUtenti().subscribe((utenti) => {
@@ -71,7 +93,7 @@ public getUtente():Utente{
       panelClass: 'custom-dialog-panel',
   hasBackdrop: true,
   backdropClass: 'custom-dialog-backdrop',
-      data: { utenti, ibanMittente: this.utente.iban }
+      data: { utenti, ibanMittente: this.utente.iban, username: this.utente.username }
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -134,6 +156,21 @@ openConfermaCancellazioneCartaDialog(carta: Carta): void {
   });
 }
 
+scaricaEstrattoConto() {
+  const ibanId = this.utente.iban?.ibanId;
+  if (!ibanId) return;
+
+  this.movimentoService.getEstrattoContoMeseCorrente(ibanId).subscribe((data: any) => {
+    const blob = new Blob([data], { type: 'application/pdf' }); 
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `estratto_conto_${new Date().toISOString().slice(0,7)}.pdf`;
+    a.click();
+    window.URL.revokeObjectURL(url);
+  });
+}
+
 
 
 openRichiestaCartaDialog() {
@@ -183,6 +220,7 @@ openRichiestaCartaDialog() {
       next: (data) => {
         this.utente = data;
         this.ordinaMovimentiPerData();
+        this.calcolaEntrateUsciteMeseCorrente();
         this.isLoading = false;
         if (this.utente && this.utente.iban && this.utente.iban.iban) {
         this.ibanMittente = this.utente.iban.iban;
