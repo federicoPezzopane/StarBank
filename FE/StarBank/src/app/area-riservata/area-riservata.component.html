@@ -14,7 +14,9 @@
         <p><strong>Età:</strong> {{ utente.eta }}</p>
         <p><strong>Codice Fiscale:</strong> {{ utente.codiceFiscale }}</p>
         <p><strong>Residenza:</strong> {{ utente.indirizzoResidenza }}, {{ utente.comuneResidenza?.nomeComune }} </p>
-        <button mat-button color="primary" class="operation-btn" (click)="openModificaInformazioniDialog()">Modifica informazioni</button>
+       
+         <button mat-stroked-button color="accent"  class="custom-operation-btn" style="height: 70px;"(click)="openModificaInformazioniDialog()">Modifica informazioni</button>
+      
       </div>
 
       <div class="card investimenti-card">
@@ -36,7 +38,7 @@
 
     <div class="main-content">
       <div class="card iban-card">
-        <h2 class="gradient-text">Conto: {{ utente.iban?.iban }}</h2>
+        <h2 class="gradient-text">Iban: {{ utente.iban?.iban }}</h2>
         <p><strong>Saldo Contabile:</strong> € {{ utente.iban?.saldoContabile | number:'1.2-2' }}</p>
         <p><strong>Saldo Disponibile:</strong> € {{ utente.iban?.saldoDisponibile | number:'1.2-2' }}</p>
       </div>
@@ -98,17 +100,17 @@
              </button>
           </li>
         </ul>
-       <button mat-button color="primary" class="operation-btn"
-  (click)="openRichiestaCartaDialog()" 
+
+          <button mat-stroked-button color="accent"  class="custom-operation-btn" style="height: 70px;"(click)="openRichiestaCartaDialog()" 
     [disabled]="canRequestCard">
-  Richiedi una nuova carta
-</button>
+  Richiedi una nuova carta</button>
+      
 
       </div>
 
       <div class="card operazioni-card">
         <h2 class="gradient-text">Operazioni</h2>
-        <!-- Pulsante per aprire la modale -->
+      
 <button mat-raised-button color="warn" class="operation-btn bonifico-btn custom-operation-btn" (click)="openBonificoDialog()">
   Effettua Bonifico
 </button>
