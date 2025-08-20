@@ -1,0 +1,189 @@
+.investimenti-section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.gradient-text {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff3b3b, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  margin-top: 40px !important;
+}
+
+.overview {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+
+  .totale-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    flex: 1;
+    text-align: center;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+      font-weight: 700;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .positivo {
+      color: #28a745;
+    }
+    .negativo {
+      color: #dc3545;
+    }
+  }
+}
+
+.no-investimenti {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #777;
+  margin: 2rem 0;
+}
+
+.lista-investimenti {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+app-investimento-card {
+  cursor: pointer;
+  display: block;
+
+  .investimento-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.2rem 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+
+    p {
+      margin: 0.2rem 0;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .positivo {
+      color: #28a745;
+      font-weight: 600;
+    }
+    .negativo {
+      color: #dc3545;
+      font-weight: 600;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+  }
+}
+
+.investimenti-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;            
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  h1 {
+    margin: 0; 
+    font-size: 2rem; 
+    text-align: left;
+  }
+
+  .buttons-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+.nuovo-btn, .torna-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.05rem;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 99, 71, 0.3);
+}
+
+.nuovo-btn {
+  background: linear-gradient(135deg, #ff3b3b, #ff6666);
+  color: #fff;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #ff6666, #ff3b3b);
+  }
+
+  mat-icon {
+    font-size: 1.2rem;
+  }
+}
+
+.torna-btn {
+  background: linear-gradient(135deg, #ff3b3b, #ff6666);
+  color: #fff;
+
+  &:hover {
+    transform: translateX(-3px);
+    box-shadow: 0 6px 15px rgba(255, 99, 71, 0.5);
+    background: linear-gradient(135deg, #ff6666, #ff3b3b);
+  }
+
+  .torna-icona {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .torna-btn, .nuovo-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    min-width: auto;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .investimenti-header h1,
+  .overview .totale-card {
+    flex: 1 1 100%;   
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+}

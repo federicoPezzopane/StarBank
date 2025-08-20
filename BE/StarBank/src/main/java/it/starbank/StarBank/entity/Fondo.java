@@ -1,5 +1,6 @@
 package it.starbank.StarBank.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -45,5 +46,9 @@ public class Fondo {
     private String societaGestione;
 
     @OneToMany(mappedBy = "fondo", cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<Investimento> fondoInvestimenti;
+
+    @OneToMany(mappedBy = "fondo", cascade = CascadeType.ALL)
+    private List<ValoreFondo> storicoValori;
 }

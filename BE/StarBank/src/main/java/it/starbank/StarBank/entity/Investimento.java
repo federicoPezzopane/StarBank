@@ -1,5 +1,6 @@
 package it.starbank.StarBank.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +17,7 @@ import java.sql.Date;
 public class Investimento {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_investimento")
     private int idInvestimento;
 
@@ -31,6 +32,7 @@ public class Investimento {
 
     @ManyToOne
     @JoinColumn(name = "iban_id", referencedColumnName = "iban_id")
+    @JsonBackReference
     private Iban iban;
 
     @Column(name = "data_investimento")

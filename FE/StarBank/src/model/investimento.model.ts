@@ -1,6 +1,11 @@
-// investimento.model.ts
 import { Fondo } from './fondo.model';
 import { Iban } from './iban.model';
+
+export interface ValoreFondo {
+  id: number;
+  dataValore: Date;
+  valore: number;
+}
 
 export interface Investimento {
   idInvestimento: number;
@@ -8,6 +13,7 @@ export interface Investimento {
   prezzoAcquisto: number;
   valoreAttuale: number;
   iban: Iban;
-  dataInvestimento: string; // o Date
+  dataInvestimento: string;
   fondo: Fondo;
+  storicoValori: ValoreFondo[];
 }

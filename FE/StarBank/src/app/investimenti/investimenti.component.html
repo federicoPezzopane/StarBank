@@ -1,0 +1,47 @@
+<div *ngIf="isLoading" class="loading-overlay">
+  <mat-icon class="loading-spinner rainbow-star">star</mat-icon>
+</div>
+
+<section *ngIf="!isLoading" class="investimenti-section">
+<div class="investimenti-header">
+  <h1 class="gradient-text">I tuoi investimenti</h1>
+  <div class="buttons-group">
+    <button mat-raised-button color="accent" class="nuovo-btn" (click)="apriNuovoInvestimento()">
+      <mat-icon>add</mat-icon>
+      Nuovo Investimento
+    </button>
+
+    <button mat-raised-button color="primary" class="torna-btn" (click)="tornaAreaRiservata()">
+      <mat-icon class="torna-icona">arrow_back</mat-icon>
+      Torna all'area riservata
+    </button>
+  </div>
+</div>
+
+  <div class="overview">
+    <div class="totale-card">
+      <h2>Investito</h2>
+      <p>€ {{ totaleInvestito | number:'1.2-2' }}</p>
+    </div>
+    <div class="totale-card">
+      <h2>Guadagno</h2>
+      <p [ngClass]="{'positivo': totaleGuadagno >= 0, 'negativo': totaleGuadagno < 0}">
+        € {{ totaleGuadagno | number:'1.2-2' }} ({{ percentualePL | number:'1.2-2' }}%)
+      </p>
+    </div>
+  </div>
+
+  <div *ngIf="!investimenti.length" class="no-investimenti">
+    Nessun investimento disponibile.
+  </div>
+
+  <div class="lista-investimenti" *ngIf="investimenti.length">
+    <app-investimenti-card
+      *ngFor="let inv of investimenti"
+      [investimento]="inv"
+      (click)="apriDettaglio(inv)">
+    </app-investimenti-card>
+  </div>
+
+  
+</section>

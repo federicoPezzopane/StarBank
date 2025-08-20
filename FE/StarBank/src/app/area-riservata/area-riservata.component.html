@@ -18,7 +18,7 @@
       </div>
 
       <div class="card investimenti-card">
-        <h2 class="gradient-text">Investimenti</h2>
+        <!--<h2 class="gradient-text">Investimenti</h2>
         <ul *ngIf="utente.iban?.investimenti?.length; else nessunInvestimento">
           <li *ngFor="let investimento of utente.iban?.investimenti">
             {{ investimento.fondo.nome }} – € {{ investimento.valoreAttuale | number:'1.2-2' }}
@@ -26,10 +26,11 @@
         </ul>
         <ng-template #nessunInvestimento>
           <p>Nessun investimento disponibile.</p>
-        </ng-template>
-        <button mat-stroked-button color="accent" routerLink="/investimenti" class="operation-btn">
-          Vai alla sezione Investimenti
+        </ng-template>-->
+        <button mat-stroked-button color="accent" routerLink="/investimenti" class="custom-operation-btn" style="height: 70px;">
+        Vai alla sezione Investimenti
         </button>
+
       </div>
     </div>
 
@@ -108,12 +109,12 @@
       <div class="card operazioni-card">
         <h2 class="gradient-text">Operazioni</h2>
         <!-- Pulsante per aprire la modale -->
-<button mat-raised-button color="warn" class="operation-btn bonifico-btn" (click)="openBonificoDialog()">
+<button mat-raised-button color="warn" class="operation-btn bonifico-btn custom-operation-btn" (click)="openBonificoDialog()">
   Effettua Bonifico
 </button>
-<button (click)="notificationService.showSuccess()">Test Toast</button>
 
-        <button mat-stroked-button color="warn" class="logout-button" (click)="logout()">Logout</button>
+
+        <button mat-stroked-button color="warn" class="custom-operation-btn" (click)="logout()">Logout</button>
       </div>
     </div>
   </div>

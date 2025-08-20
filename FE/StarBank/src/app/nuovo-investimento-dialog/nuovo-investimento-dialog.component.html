@@ -1,0 +1,63 @@
+<h2 mat-dialog-title class="dialog-title">Nuovo Investimento</h2>
+
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="form" class="form">
+
+    <ng-container *ngIf="fase === 1">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Seleziona Fondo</mat-label>
+        <mat-select formControlName="fondoId" [disableOptionCentering]="true" panelClass="custom-select-panel">
+          <mat-option *ngFor="let fondo of fondi" [value]="fondo.idFondo">
+            {{ fondo.nome }} ({{ fondo.categoria }})
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </ng-container>
+
+ 
+    <ng-container *ngIf="fase === 2" class="riepilogo-form">
+      <p><strong>Fondo:</strong> {{ fondoSelezionato?.nome }}</p>
+      <p><strong>Categoria:</strong> {{ fondoSelezionato?.categoria }}</p>
+      <p><strong>Rischio:</strong> {{ fondoSelezionato?.rischio }}</p>
+      <p><strong>Società Gestione:</strong> {{ fondoSelezionato?.societaGestione }}</p>
+      <p><strong>Patrimonio:</strong> {{ fondoSelezionato?.patrimonio | number:'1.0-2'}} €</p>
+      <p><strong>Valore Attuale:</strong> {{ valoreAttuale | number:'1.0-2'}} €</p>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Quantità da investire (€)</mat-label>
+        <input matInput type="number" formControlName="quantita" min="1" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Inserisci la tua password</mat-label>
+        <input matInput type="password" formControlName="confermaPassword" />
+        <mat-error *ngIf="form.get('confermaPassword')?.invalid">Password richiesta</mat-error>
+      </mat-form-field>
+    </ng-container>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-stroked-button color="warn" (click)="chiudi()">Annulla</button>
+
+
+  <button *ngIf="fase === 1"
+          mat-flat-button
+          color="warn"
+          [disabled]="!form.value.fondoId"
+          (click)="selezionaFondo()">
+    Successivo
+  </button>
+
+
+  <button *ngIf="fase === 2"
+          mat-flat-button
+          color="warn"
+          [disabled]="!form.valid"
+           class="form-invia-btn"
+          (click)="confermaInvestimento()">
+    Conferma Investimento
+  </button>
+
+</mat-dialog-actions>

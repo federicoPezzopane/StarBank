@@ -1,0 +1,20 @@
+<div class="investimento-card">
+  <h3>{{ investimento.fondo.nome }}</h3>
+
+  <p>Attuale: € {{ (investimento.quantita * investimento.valoreAttuale) | number:'1.2-2' }}</p>
+  <p>Iniziale: € {{ (investimento.quantita * investimento.prezzoAcquisto) | number:'1.2-2' }}</p>
+
+ 
+  <p [ngClass]="{
+        'positivo': (investimento.quantita * investimento.valoreAttuale) >= (investimento.quantita * investimento.prezzoAcquisto),
+        'negativo': (investimento.quantita * investimento.valoreAttuale) < (investimento.quantita * investimento.prezzoAcquisto)
+      }">
+    P/L: 
+    € {{ ((investimento.quantita * investimento.valoreAttuale) - (investimento.quantita * investimento.prezzoAcquisto)) | number:'1.2-2' }}
+    ({{ (((investimento.quantita * investimento.valoreAttuale) - (investimento.quantita * investimento.prezzoAcquisto)) / (investimento.quantita * investimento.prezzoAcquisto)) * 100 | number:'1.2-2' }}%)
+  </p>
+  <p>
+    Quantita: 
+    {{investimento.quantita}}
+  </p>
+</div>

@@ -4,7 +4,6 @@ import it.starbank.StarBank.dto.AddCartaDTO;
 import it.starbank.StarBank.entity.Carta;
 import it.starbank.StarBank.service.CartaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,0 +1,28 @@
+<h2 mat-dialog-title class="dialog-title">{{ investimento.fondo.nome }}</h2>
+
+<mat-dialog-content class="dialog-content">
+  <div class="investimento-info">
+    <p>Valore attuale: <strong>€ {{ investimento.valoreAttuale * investimento.quantita | number:'1.2-2' }}</strong></p>
+    <p>Investimento iniziale: <strong>€ {{ (investimento.quantita * investimento.prezzoAcquisto) | number:'1.2-2' }}</strong></p>
+    <p>P/L: 
+      <strong [ngClass]="{
+        'positivo': investimento.valoreAttuale >= (investimento.quantita * investimento.prezzoAcquisto),
+        'negativo': investimento.valoreAttuale < (investimento.quantita * investimento.prezzoAcquisto)
+      }">
+        € {{ (investimento.valoreAttuale - (investimento.quantita * investimento.prezzoAcquisto)) | number:'1.2-2' }}
+      </strong>
+    </p>
+  </div>
+
+  <div class="chart-container">
+    <canvas baseChart
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      [type]="'line'">
+    </canvas>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="primary" (click)="chiudi()">Chiudi</button>
+</mat-dialog-actions>
