@@ -2,14 +2,21 @@
 
 <mat-dialog-content class="dialog-content">
   <div class="investimento-info">
-    <p>Valore attuale: <strong>€ {{ investimento.valoreAttuale * investimento.quantita | number:'1.2-2' }}</strong></p>
-    <p>Investimento iniziale: <strong>€ {{ (investimento.quantita * investimento.prezzoAcquisto) | number:'1.2-2' }}</strong></p>
+    <p>Valore attuale: 
+      <strong>€ {{ (investimento.valoreAttuale * investimento.quantita) | number:'1.2-2' }}</strong>
+    </p>
+    
+    <p>Investimento iniziale: 
+      <strong>€ {{ (investimento.quantita * investimento.prezzoAcquisto) | number:'1.2-2' }}</strong>
+    </p>
+    
     <p>P/L: 
       <strong [ngClass]="{
-        'positivo': investimento.valoreAttuale >= (investimento.quantita * investimento.prezzoAcquisto),
-        'negativo': investimento.valoreAttuale < (investimento.quantita * investimento.prezzoAcquisto)
+        'positivo': (investimento.valoreAttuale * investimento.quantita) >= (investimento.quantita * investimento.prezzoAcquisto),
+        'negativo': (investimento.valoreAttuale * investimento.quantita) < (investimento.quantita * investimento.prezzoAcquisto)
       }">
-        € {{ (investimento.valoreAttuale - (investimento.quantita * investimento.prezzoAcquisto)) | number:'1.2-2' }}
+        € {{ ((investimento.valoreAttuale * investimento.quantita) - (investimento.quantita * investimento.prezzoAcquisto)) | number:'1.2-2' }}
+        ({{ (((investimento.valoreAttuale * investimento.quantita) - (investimento.quantita * investimento.prezzoAcquisto)) / (investimento.quantita * investimento.prezzoAcquisto)) * 100 | number:'1.2-2' }}%)
       </strong>
     </p>
   </div>

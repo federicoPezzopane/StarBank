@@ -186,4 +186,15 @@ app-investimento-card {
     text-align: center;
     margin-bottom: 0.5rem;
   }
+   .overview {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+
+    .totale-card {
+      width: 100%;
+      text-align: center;
+      margin: 0;
+    }
+  }
 }
