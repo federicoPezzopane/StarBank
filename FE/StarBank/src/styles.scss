@@ -6,6 +6,57 @@
   html, body {
     overflow-x: hidden;
   }
+  .dialog-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #ff3b3b;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+
+  mat-form-field {
+    width: 100%;
+    max-width: 420px;
+
+    .mat-form-field-wrapper {
+      padding-bottom: 0.25rem;
+    }
+
+    .mat-form-field-outline {
+      border-radius: 8px;
+    }
+
+    .mat-form-field-flex {
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .mat-form-field-label {
+      color: #b71c1c;
+      font-weight: 600;
+    }
+
+    .mat-select-arrow {
+      color: #b71c1c;
+    }
+
+    &.mat-focused .mat-form-field-outline {
+      border-color: #ff3b3b !important;
+    }
+
+    input.mat-input-element {
+      color: #333;
+    }
+  }
+}
   
 .custom-toast-success {
   background-color: #f1c40f !important; 
@@ -657,5 +708,25 @@
   min-width: unset !important; 
 }
 
+.custom-operation-btn {
+  background: linear-gradient(135deg, #ff3b3b, #ff6666);
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 99, 71, 0.3);
 
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 99, 71, 0.5);
+    background: linear-gradient(135deg, #ff6666, #ff3b3b);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(255, 99, 71, 0.4);
+  }
+}
 

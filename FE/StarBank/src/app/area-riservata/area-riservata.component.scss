@@ -4,346 +4,259 @@
   font-family: 'Montserrat', sans-serif;
   background-color: #f5f5f5;
   color: #333;
-}
 
-.area-riservata-section h1,
-.area-riservata-section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #ff3b3b;
-  font-weight: 700;
-}
+  h1,
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ff3b3b;
+    font-weight: 700;
+  }
 
-.gradient-text {
+  .gradient-text {
+    background: linear-gradient(135deg, #ff3b3b, #ff6666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+  }
+
+  .dashboard-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: auto;
+    align-items: stretch;
+  }
+
+  .sidebar {
+    width: 20%;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sidebar.left { order: 1; }
+  .sidebar.right { order: 3; }
+
+  .sidebar .info-card,
+  .sidebar .investimenti-card,
+  .sidebar .carte-card,
+  .sidebar .operazioni-card,
+  .main-content .iban-card,
+  .main-content .movimenti-card,
+  .movimento-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    flex-grow: 1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .sidebar .info-card p,
+  .sidebar .investimenti-card p,
+  .sidebar .carte-card p,
+  .sidebar .operazioni-card p,
+  .main-content .iban-card p,
+  .main-content .movimenti-card p {
+    margin: 0.3rem 0;
+    font-size: 1.1rem;
+  }
+
+  .sidebar .info-card ul,
+  .sidebar .investimenti-card ul,
+  .sidebar .carte-card ul,
+  .sidebar .operazioni-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sidebar .info-card ul li,
+  .sidebar .investimenti-card ul li,
+  .sidebar .carte-card ul li,
+  .sidebar .operazioni-card ul li {
+    margin-bottom: 0.7rem;
+    font-weight: 500;
+    color: #444;
+  }
+
+  .sidebar .info-card button,
+  .sidebar .investimenti-card button,
+  .sidebar .carte-card button,
+  .sidebar .operazioni-card button {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .main-content {
+    flex: 1;
+    min-width: 300px;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .movimento-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .movimento-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }
+
+  .movimenti-list {
+    max-height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 0.3rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.3) transparent;
+  }
+
+  .movimenti-list::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .movimenti-list::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 4px;
+  }
+
+  .movimenti-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .movimento-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+    padding-bottom: 0.1rem;
+  }
+
+  .movimento-header .data { flex: 1; }
+  .movimento-header .tipo { flex: 1; text-align: center; text-transform: capitalize; color: #ff3b3b; }
+  .movimento-header .importo { flex: 1; text-align: right; font-weight: 700; font-size: 1.1rem; }
+  .importo.positivo { color: green; }
+  .importo.negativo { color: red; }
+
+  .descrizione {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+    padding-left: 0.2rem;
+  }
+
+  .saldo-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #555;
+    border-top: 1px solid #eee;
+    padding-top: 0.3rem;
+  }
+
+  .custom-operation-btn {
+    background: linear-gradient(135deg, #ff3b3b, #ff6666);
+    color: white;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 99, 71, 0.3);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(255, 99, 71, 0.5);
+      background: linear-gradient(135deg, #ff6666, #ff3b3b);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 3px 8px rgba(255, 99, 71, 0.4);
+    }
+  }
+
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loading-overlay .loading-spinner {
+    font-size: 5rem;
+    animation: rainbow-spin 2s linear infinite;
+  }
+
+  @keyframes rainbow-spin {
+    0% { color: red; }
+    25% { color: yellow; }
+    50% { color: green; }
+    75% { color: blue; }
+    100% { color: red; }
+  }
+
+  @media (max-width: 1024px) {
+    .dashboard-layout { flex-direction: column; }
+
+    .sidebar { width: 100%; flex-wrap: wrap; flex-direction: row; justify-content: space-between; }
+    .sidebar .info-card,
+    .sidebar .investimenti-card,
+    .sidebar .carte-card,
+    .sidebar .operazioni-card { flex: 1 1 45%; }
+
+    .main-content { order: unset; }
+  }
+
+  @media (max-width: 600px) {
+    .sidebar { flex-direction: column; }
+    .sidebar .info-card,
+    .sidebar .investimenti-card,
+    .sidebar .carte-card,
+    .sidebar .operazioni-card { flex: 1 1 100%; }
+
+    .main-content { order: 1; width: 100%; }
+    .main-content .iban-card { order: 1; }
+    .main-content .movimenti-card { order: 2; }
+    .sidebar.left { order: 3; width: 100%; }
+    .sidebar.right { order: 4; width: 100%; }
+  }
+}
+.area-riservata-section .sidebar .info-card h2,
+.area-riservata-section .sidebar .investimenti-card h2,
+.area-riservata-section .sidebar .carte-card h2,
+.area-riservata-section .sidebar .operazioni-card h2,
+.area-riservata-section .main-content .iban-card h2,
+.area-riservata-section .main-content .movimenti-card h2 {
   background: linear-gradient(135deg, #ff3b3b, #ff6666);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 800;
-}
-
-.area-riservata-section .dashboard-layout {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  max-width: 1400px;
-  margin: auto;
-  align-items: stretch;
-}
-
-.area-riservata-section .sidebar {
-  width: 20%;
-  min-width: 250px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.area-riservata-section .sidebar.left {
-  order: 1;
-}
-
-.area-riservata-section .sidebar.right {
-  order: 3;
-}
-
-.area-riservata-section .sidebar .info-card,
-.area-riservata-section .sidebar .investimenti-card,
-.area-riservata-section .sidebar .carte-card,
-.area-riservata-section .sidebar .operazioni-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  flex-grow: 1;
-}
-
-.area-riservata-section .sidebar .info-card p,
-.area-riservata-section .sidebar .investimenti-card p,
-.area-riservata-section .sidebar .carte-card p,
-.area-riservata-section .sidebar .operazioni-card p {
-  margin: 0.3rem 0;
-  font-size: 1.1rem;
-}
-
-.area-riservata-section .sidebar .info-card ul,
-.area-riservata-section .sidebar .investimenti-card ul,
-.area-riservata-section .sidebar .carte-card ul,
-.area-riservata-section .sidebar .operazioni-card ul {
-  list-style: none;
-  padding: 0;
-}
-
-.area-riservata-section .sidebar .info-card ul li,
-.area-riservata-section .sidebar .investimenti-card ul li,
-.area-riservata-section .sidebar .carte-card ul li,
-.area-riservata-section .sidebar .operazioni-card ul li {
-  margin-bottom: 0.7rem;
-  font-weight: 500;
-  color: #444;
-}
-
-.area-riservata-section .sidebar .info-card button,
-.area-riservata-section .sidebar .investimenti-card button,
-.area-riservata-section .sidebar .carte-card button,
-.area-riservata-section .sidebar .operazioni-card button {
-  margin-top: 1rem;
-  width: 100%;
-}
-
-.area-riservata-section .main-content {
-  flex: 1;
-  min-width: 300px;
-  order: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.area-riservata-section .iban-card,
-.area-riservata-section .movimenti-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.area-riservata-section .iban-card p,
-.area-riservata-section .movimenti-card p {
-  font-size: 1.1rem;
-  margin: 0.4rem 0;
-}
-
-.area-riservata-section .movimento-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 0.6rem 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  transition: box-shadow 0.3s ease;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-}
-
-.area-riservata-section .movimento-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.area-riservata-section .movimenti-list {
-  max-height: 400px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.area-riservata-section .movimento-card:not(:last-child) {
-  margin-bottom: 1rem;
-}
-
-.area-riservata-section .movimento-header {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #333;
-  padding-bottom: 0.1rem;
-}
-
-.area-riservata-section .movimento-header .data {
-  flex: 1;
-}
-
-.area-riservata-section .movimento-header .tipo {
-  flex: 1;
-  text-align: center;
-  text-transform: capitalize;
-  color: #ff3b3b;
-}
-
-.area-riservata-section .movimento-header .importo {
-  flex: 1;
-  text-align: right;
+  color: transparent;
   font-weight: 700;
-  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
-.area-riservata-section .importo.positivo {
-  color: green;
+.area-riservata-section .sidebar .investimenti-card  {
+  height: 70px;
+  font-size: 1.3rem;
+  padding: 0.8rem 2rem;
 }
-
-.area-riservata-section .importo.negativo {
-  color: red;
-}
-
-.area-riservata-section .descrizione {
-  font-style: italic;
-  color: #666;
-  font-size: 0.9rem;
-  padding-left: 0.2rem;
-}
-
-.area-riservata-section .saldo-info {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.85rem;
-  color: #555;
-  border-top: 1px solid #eee;
-  padding-top: 0.3rem;
-}
-
-.area-riservata-section .loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.area-riservata-section .loading-overlay .loading-spinner {
-  font-size: 5rem;
-  animation: rainbow-spin 2s linear infinite;
-}
-
-@keyframes rainbow-spin {
-  0% { color: red; }
-  25% { color: yellow; }
-  50% { color: green; }
-  75% { color: blue; }
-  100% { color: red; }
-}
-
-@media (max-width: 1024px) {
-  .area-riservata-section .dashboard-layout {
-    flex-direction: column;
-  }
-
-  .area-riservata-section .sidebar {
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .area-riservata-section .sidebar .info-card,
-  .area-riservata-section .sidebar .investimenti-card,
-  .area-riservata-section .sidebar .carte-card,
-  .area-riservata-section .sidebar .operazioni-card {
-    flex: 1 1 45%;
-  }
-
-  .area-riservata-section .main-content {
-    order: unset;
-  }
-}
-
-@media (max-width: 600px) {
-  .area-riservata-section .sidebar {
-    flex-direction: column;
-  }
-
-  .area-riservata-section .sidebar .info-card,
-  .area-riservata-section .sidebar .investimenti-card,
-  .area-riservata-section .sidebar .carte-card,
-  .area-riservata-section .sidebar .operazioni-card {
-    flex: 1 1 100%;
-  }
-
-  .area-riservata-section .main-content {
-    flex: 1 1 100%;
-    min-width: 0;
-    width: 100%;
-  }
-}
-.full-width {
-  width: 100%;
-}
-
-.operation-btn {
-  margin-top: 1rem;
-}
-.bonifico-btn {
-  background-color: white;
-  color: white;
-
-  &:hover {
-    background-color: #e62e2e;
-  }
-}
-.carta-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 4px 0;
-  font-size: 1rem;
-  color: #333;
-}
-
-.carta-info {
-  flex: 1;
-  font-size: 1rem;
-  color: #444;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-
-.carta-remove-btn {
-  background: none !important;
-  border-radius: 0 !important;
-  padding: 0;
-  min-width: 0;
-  width: auto;
-  height: auto;
-  line-height: 1;
-}
-
-.carta-remove-btn,
-.carta-remove-btn:hover,
-.carta-remove-btn:focus,
-.carta-remove-btn:active {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  padding: 0; 
-}
-
-button.mat-icon-button:hover,
-button.mat-icon-button:focus {
-  background-color: transparent !important;
-  box-shadow: none !important;
-}
-
-.movimenti-header {
-display: flex;
-  flex-wrap: wrap;  
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.movimenti-header h2 {
-  flex: 1;
-  text-align: center;
-}
-
-.totale-entrate, .totale-uscite {
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.valore.verde {
-  color: green;
-}
-
-.valore.rosso {
-  color: red;
-}
-
-
