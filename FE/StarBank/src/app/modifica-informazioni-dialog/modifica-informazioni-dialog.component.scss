@@ -1,19 +1,21 @@
-@use '@angular/material' as mat;
-
 .dialog-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #ff3b3b;
   text-align: center;
-  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
 }
 
 .dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: 100%;
-  padding: 0;
-  margin: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .dialog-actions {
@@ -32,14 +34,16 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.8rem;
-  font-family: 'Montserrat', sans-serif;
-  padding: 1.5rem; 
+  gap: 2rem;
+  width: 100%;
+  max-width: 450px;
+  padding: 1.5rem 0; 
+  box-sizing: border-box;
 }
 
 .form-modifica-info mat-form-field {
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
 
   .mat-form-field-wrapper {
     padding-bottom: 0.25rem;
@@ -68,14 +72,12 @@ button {
   width: 100%;
 }
 
-
 .modifica-informazioni-dialog-panel {
   border-radius: 8px !important;
   box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12) !important;
   padding: 24px !important;
   max-width: 90vw !important; 
 }
-
 
 ::ng-deep .mat-mdc-select-panel {
   font-family: 'Montserrat', sans-serif;
@@ -102,3 +104,30 @@ button {
   font-weight: 600;
 }
 
+@media (max-width: 600px) {
+  .dialog-content {
+    padding: 0 1.5rem;
+  }
+
+  .form-modifica-info {
+    gap: 1.5rem;
+    max-width: 100%;
+    padding: 1rem 0;
+  }
+
+  .dialog-title {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  .dialog-actions {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
