@@ -1,10 +1,23 @@
 .dialog-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #ff3b3b;
   text-align: center;
   margin-bottom: 1rem;
+  word-wrap: break-word;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  max-height: 500px; /* più spazio verticale */
+  overflow-y: auto;  /* scrollbar verticale se necessario */
 }
 
 .movimento-dettaglio {
@@ -12,9 +25,13 @@
   flex-direction: column;
   gap: 0.5rem;
   font-size: 1rem;
+  width: 100%;
+  max-width: 450px; /* uguale al form modifica info */
+  box-sizing: border-box;
 
   p {
     margin: 0;
+    word-break: break-word; /* evita scrollbar orizzontale su IBAN lunghi */
   }
 
   .positivo {
@@ -25,5 +42,69 @@
   .negativo {
     color: red;
     font-weight: bold;
+  }
+}
+
+.dialog-actions {
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .dialog-content {
+    padding: 0 0.8rem;
+    max-height: 400px;
+  }
+
+  .dialog-title {
+    font-size: 1.4rem;
+  }
+
+  .dialog-actions {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+.dialog-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2rem; 
+  color: #ff3b3b;
+  text-align: center;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+  .dialog-title {
+    font-size: 1.4rem;
+    line-height: 1.8rem; 
+  }
+}
+
+.movimento-dettaglio p {
+  margin: 0 0 0.6rem 0; /* spazio tra i paragrafi */
+  line-height: 1.5rem;  /* più respiro verticale */
+}
+
+@media (max-width: 600px) {
+  .movimento-dettaglio p {
+    line-height: 0.9rem; /* leggermente più spazioso su mobile */
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
   }
 }
