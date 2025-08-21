@@ -5,7 +5,7 @@ export interface Movimento {
   idMovimento: number;
   importo: number;
   ibanDestinazione?: Iban;
-  ibanMittente?: String;
+  iban?: Iban;
   tipoMovimento: string;
   dataMovimento: string;
   saldoPostMovimento: string;

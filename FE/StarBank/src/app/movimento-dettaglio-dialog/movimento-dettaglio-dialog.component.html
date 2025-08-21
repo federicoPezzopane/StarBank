@@ -1,0 +1,22 @@
+<h2 mat-dialog-title class="dialog-title">Dettaglio Movimento</h2>
+
+<mat-dialog-content class="dialog-content">
+  <div class="movimento-dettaglio">
+    <p><strong>Data:</strong> {{ data.dataMovimento | date:'longDate' }}</p>
+    <p><strong>Tipo:</strong> {{ data.tipoMovimento | titlecase }}</p>
+    <p><strong>Importo:</strong> 
+      <span [ngClass]="{'positivo': data.importo > 0, 'negativo': data.importo <= 0}">
+        € {{ data.importo | number:'1.2-2' }}
+      </span>
+    </p>
+    <p><strong>Descrizione:</strong> {{ data.descrizione || 'Nessuna descrizione' }}</p>
+    <p><strong>IBAN Mittente:</strong> {{ data.iban?.iban || '-' }}</p>
+    <p><strong>IBAN Destinatario:</strong> {{ data.ibanDestinazione?.iban || '-' }}</p>
+    <p><strong>Saldo Pre:</strong> € {{ data.saldoPreMovimento | number:'1.2-2' }}</p>
+    <p><strong>Saldo Post:</strong> € {{ data.saldoPostMovimento | number:'1.2-2' }}</p>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="warn" (click)="close()">Chiudi</button>
+</mat-dialog-actions>

@@ -106,17 +106,18 @@ button {
 
 @media (max-width: 600px) {
   .dialog-content {
-    padding: 0 1.5rem;
+    padding: 0 0.8rem;
+    max-height: 400px;
   }
 
   .form-modifica-info {
-    gap: 1.5rem;
+    gap: 0.3rem;
     max-width: 100%;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
   }
 
   .dialog-title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.5;
   }
 

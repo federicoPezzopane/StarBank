@@ -1,0 +1,23 @@
+.dialog-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  background: linear-gradient(90deg, #ff3b3b, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+
+.form .recap-block {
+  text-align: left;
+  width: 75%;
+}
+.totale-investimento {
+  font-weight: 600;
+  margin-top: 0.5rem;
+  color: #ff3b3b;
+}

@@ -35,6 +35,7 @@ import { NuovoInvestimentoDialogComponent } from './nuovo-investimento-dialog/nu
 import { InvestimentoDettaglioComponent } from './investimento-dettaglio/investimento-dettaglio.component';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
+import { MovimentoDettaglioDialogComponent } from './movimento-dettaglio-dialog/movimento-dettaglio-dialog.component';
 
 
 const globalRippleConfig: RippleGlobalOptions = {
@@ -55,7 +56,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     InvestimentiComponent, 
     NuovoInvestimentoDialogComponent,
     InvestimentiCardComponent,
-    InvestimentoDettaglioComponent
+    InvestimentoDettaglioComponent,
+    MovimentoDettaglioDialogComponent
   ],
   imports: [
     BrowserModule,

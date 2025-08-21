@@ -50,7 +50,7 @@ public class MovimentoService {
         destinatario.setSaldoDisponibile(movimentoEntrante.getSaldoPostMovimento());
 
         movimentoUscente.setIban(mittente);
-        movimentoEntrante.setIban(destinatario);
+        movimentoEntrante.setIbanDestinazione(destinatario);
 
         movimentoUscente.setDataMovimento(new java.sql.Date(System.currentTimeMillis()));
         movimentoEntrante.setDataMovimento(new java.sql.Date(System.currentTimeMillis()));

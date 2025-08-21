@@ -39,22 +39,32 @@
 
     <div class="main-content">
       <div class="card iban-card">
-        <h2 class="gradient-text">Iban: {{ utente.iban?.iban }}</h2>
-        <p><strong>Saldo Contabile:</strong> € {{ utente.iban?.saldoContabile | number:'1.2-2' }}</p>
-        <p><strong>Saldo Disponibile:</strong> € {{ utente.iban?.saldoDisponibile | number:'1.2-2' }}</p>
-      </div>
+  <h2 class="gradient-text">Conto: {{ utente.iban?.iban }}</h2>
+
+  <div class="saldo-wrapper">
+    <div class="saldo-box">
+      <p><strong>Saldo Contabile:</strong></p>
+      <span class="valore">€ {{ utente.iban?.saldoContabile | number:'1.2-2' }}</span>
+    </div>
+    <div class="saldo-box">
+      <p><strong>Saldo Disponibile:</strong></p>
+      <span class="valore">€ {{ utente.iban?.saldoDisponibile | number:'1.2-2' }}</span>
+    </div>
+    <div class="saldo-box">
+      <p><strong>Entrate Mese:</strong></p>
+      <span class="valore verde">€ {{ entrateMese | number:'1.2-2' }}</span>
+    </div>
+    <div class="saldo-box">
+      <p><strong>Uscite Mese:</strong></p>
+      <span class="valore rosso">€ {{ usciteMese | number:'1.2-2' }}</span>
+    </div>
+  </div>
+</div>
+
 
       <div class="card movimenti-card">
         <div class="movimenti-header">
-  <span class="totale-entrate">
-    Totale Entrate Mese: <span class="valore verde">€ {{ entrateMese | number:'1.2-2' }}</span>
-  </span>
-
   <h2 class="gradient-text">Movimenti</h2>
-
-  <span class="totale-uscite">
-    Totale Uscite Mese: <span class="valore rosso">€ {{ usciteMese | number:'1.2-2' }}</span>
-  </span>
 </div>
 
         <button mat-stroked-button color="primary" class="operation-btn"
@@ -67,7 +77,7 @@
         </div>
 
         <div class="movimenti-list" *ngIf="utente.iban?.movimenti?.length">
-          <div class="movimento-card" *ngFor="let movimento of utente.iban?.movimenti">
+          <div class="movimento-card" *ngFor="let movimento of utente.iban?.movimenti"  (click)="openMovimentoDettaglioDialog(movimento)">
             <div class="movimento-header">
               <span class="data">{{ movimento.dataMovimento | date:'longDate' }}</span>
               <span class="tipo">{{ movimento.tipoMovimento | titlecase }}</span>
@@ -112,12 +122,12 @@
       <div class="card operazioni-card">
         <h2 class="gradient-text">Operazioni</h2>
       
-<button mat-raised-button color="warn" class="operation-btn bonifico-btn custom-operation-btn" (click)="openBonificoDialog()">
+<button mat-raised-button color="warn" class="custom-operation-btn" style="height: 52px;" (click)="openBonificoDialog()">
   Effettua Bonifico
 </button>
 
 
-        <button mat-stroked-button color="warn" class="custom-operation-btn" (click)="logout()">Logout</button>
+        <button mat-stroked-button color="warn" class="custom-operation-btn" style="height: 52px;" (click)="logout()">Logout</button>
       </div>
     </div>
   </div>

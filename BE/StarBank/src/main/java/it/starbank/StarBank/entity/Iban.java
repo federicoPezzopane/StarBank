@@ -1,6 +1,8 @@
 package it.starbank.StarBank.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -46,6 +48,7 @@ public class Iban {
     private List<Carta> carte;
 
     @OneToMany(mappedBy = "iban", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Movimento> movimenti;
 
 }

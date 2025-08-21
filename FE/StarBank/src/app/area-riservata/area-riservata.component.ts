@@ -16,6 +16,8 @@ import { RichiestaCartaDialogComponent } from '../richiesta-carta-dialog/richies
 import { CartaService } from '../services/carta.service';
 import { ConfermaCancellazioneCartaDialogComponent } from '../conferma-cancellazione-carta-dialog/conferma-cancellazione-carta-dialog.component';
 import { Carta } from 'src/model/carta.model';
+import { MovimentoDettaglioDialogComponent } from '../movimento-dettaglio-dialog/movimento-dettaglio-dialog.component';
+import { Movimento } from 'src/model/movimento.model';
 
 
 @Component({
@@ -219,6 +221,7 @@ openRichiestaCartaDialog() {
     await this.utenteService.getUtenteById(utenteId).subscribe({
       next: (data) => {
         this.utente = data;
+        console.log(data)
         this.ordinaMovimentiPerData();
         this.calcolaEntrateUsciteMeseCorrente();
         this.isLoading = false;
@@ -254,4 +257,14 @@ openRichiestaCartaDialog() {
       
     }, 1500);
   }
+
+
+  openMovimentoDettaglioDialog(movimento: Movimento) {
+  this.dialog.open(MovimentoDettaglioDialogComponent, {
+    width: '500px',
+    data: movimento,
+    panelClass: 'custom-dialog-panel', 
+     backdropClass: 'custom-dialog-backdrop'
+  });
+}
 }

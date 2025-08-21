@@ -38,7 +38,10 @@ export class InvestimentiComponent implements OnInit {
     this.isLoading = true;
     const utenteIdStr = this.authService.getUtenteId();
     const utenteId = utenteIdStr ? Number(utenteIdStr) : null;
-    if (!utenteId) return;
+    if (!utenteId) {
+      this.isLoading = false;
+      return;
+    };
 
     this.utenteService.getUtenteById(utenteId).subscribe({
       next: (data) => {

@@ -1,6 +1,7 @@
 package it.starbank.StarBank.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -27,15 +28,15 @@ public class Movimento {
 
     @ManyToOne
     @JoinColumn(name = "iban_destinazione_id", referencedColumnName = "iban_id")
-    @JsonBackReference
+    @JsonIgnoreProperties({"movimenti", "utente", "investimenti", "prestiti", "carte"})
     private Iban ibanDestinazione;
 
     @Column(name = "tipo_movimento")
-    private String tipoMovimento; // usato per differenziare movimenti ca
+    private String tipoMovimento;
 
     @ManyToOne
     @JoinColumn(name = "iban_id", referencedColumnName = "iban_id", nullable = true)
-    @JsonBackReference
+    @JsonIgnoreProperties({"movimenti", "utente", "investimenti", "prestiti", "carte"})
     private Iban iban;
 
     @Column(name = "data_movimento")

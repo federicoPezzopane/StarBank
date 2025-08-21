@@ -56,7 +56,7 @@ export class NuovoInvestimentoDialogComponent implements OnInit {
           this.investimentoService.nuovoInvestimento(this.fondoSelezionato!.idFondo,
           this.form.value.quantita, this.data.ibanId).subscribe(() => this.dialogRef.close(true));
           this.toastr.success("Investimento effettuto con successo")
-          this.dialogRef.close();
+          this.dialogRef.close(true);
         },
         error: err => {
           this.toastr.error('Password errata', 'Errore');
