@@ -18,7 +18,7 @@ di una ideologica banca online :
 	-ACCESSO : Securizzato tramite jwt
 	-TRANSAZIONI : Invio / Ricezione Bonifici Sepa, Effettuare pagamenti online
 	-RICHIESTA DOCUMENTAZIONE : Possibilità di scaricare file di report PDF [ Estratto conto, spese mensili / in un intervallo di tempo definito ]
-	-RICHIESTA PRESTITI/MUTUI : Possibilità di richiedere prestiti a cui aggiungere un tasso di interesse da restituire
+	-RICHIESTA PRESTITI: Possibilità di richiedere prestiti a cui aggiungere un tasso di interesse da restituire
 	-RICHIESTA CARTE DI CREDITO/DEBITO : Possibilità di richiedere carte di pagamento
 	-INVESTIMENTI : Possibilità di investire i fondi sul proprio conto in borsa
 	-ACCESSO/MODIFICA INFOMAZIONI PERSONALI
