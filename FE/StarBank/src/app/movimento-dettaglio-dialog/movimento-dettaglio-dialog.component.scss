@@ -97,14 +97,15 @@ button {
 }
 
 .movimento-dettaglio p {
-  margin: 0 0 0.6rem 0; /* spazio tra i paragrafi */
-  line-height: 1.5rem;  /* più respiro verticale */
+  margin: 0 0 0.6rem 0; 
+  line-height: 1.5rem; 
 }
 
 @media (max-width: 600px) {
   .movimento-dettaglio p {
-    line-height: 0.9rem; /* leggermente più spazioso su mobile */
+    line-height: 0.9rem;
     margin-bottom: 0.8rem;
     font-size: 1rem;
   }
 }
+

@@ -530,3 +530,34 @@ mat-sidenav-content {
     box-shadow: 0 3px 8px rgba(255, 99, 71, 0.4);
   }
 }
+@supports (-webkit-touch-callout: none) {
+  .mat-mdc-dialog-container {
+    position: fixed !important;
+    top: 0; left: 0; right: 0; bottom: 0;
+    padding: 0;
+    z-index: 1500 !important;
+    overflow: visible !important;
+    display: block !important; /* rimuove il flex */
+  }
+
+  .mat-mdc-dialog-surface {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    max-height: 90%;
+    width: 95%;
+    max-width: 450px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: block !important;
+    border-radius: 12px;
+  }
+
+  .cdk-overlay-backdrop {
+    position: fixed !important;
+    inset: 0;
+    background: rgba(0,0,0,0.6) !important;
+    z-index: 1400;
+  }
+}
