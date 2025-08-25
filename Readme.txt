@@ -44,7 +44,7 @@ I seguenti sono i moduli in cui si divide l'applicativo :
 			-Richiesta carte di credito, debito : Da questa sezione si vedrà in alto le carte attualmente disponibili, le quali saranno selezionabili
 			per poter visualizzare i movimenti delle stesse al di sotto; inoltre, sarà possibile richiedere una nuova carta (credito, debito)
 			
-			-Investimenti : in questa sezione sarà possibile vedere i propri investimenti, con relativo guadagno / perdita
+			-Investimenti : in questa sezione sarà possibile vedere i propri investimenti, con relativo guadagno / perdita; i fondi associati agli investimenti varieranno di valore ogni 2 giorni grazie ad un batch( spring batch ) che varierà il valore attuale del fondo in base al rischio stesso; i valori passati dei fondi dopo la modifica saranno salvati su una tabella per fare lo "storico" del prezzo
 			
 			-Documentazione : Da qui si accederà alla sezione per poter richiedere documenti scaricabili come file pdf; i documenti saranno generabili per
 				-Estratto conto Carta di credito ( richiedibile se si possiede carta di credito )
