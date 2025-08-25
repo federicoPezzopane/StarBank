@@ -1,43 +1,61 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
 .login-container {
   display: flex;
-  gap: 2rem;
-  max-width: 900px;
-  margin: 3rem auto;
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   flex-wrap: nowrap;
-  min-height: 540px;
+  min-height: 90vh;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+  margin : 0 auto;
 }
+
+.side-card,
+.form-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 16px;
+  flex-basis: 50%;
+  height: clamp(300px, 80vh, 800px);
+  max-height: 800px;
+  min-height: 400px;
+}
+
 
 .side-card {
   background: #b71c1c;
   color: #ffdcdc;
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
+  padding: 4rem 3rem;
   box-shadow: 0 10px 30px rgba(183, 28, 28, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  user-select: none;
-  flex-basis: 50%;
-  height: 540px;
-  max-height: 540px;
-  margin-top:20px;
+
   .login-title {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 2.6rem;
+    font-size: clamp(3em,2vh,4em);
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     color: white;
+    line-height: 1.2;
   }
 
   p {
-    font-size: 1.15rem;
+    font-size: clamp(1.3rem,2vh,5rem);
     font-weight: 400;
     opacity: 0.9;
     margin-bottom: 2rem;
-    line-height: 1.4;
+  line-height: clamp(1.2em, 2.2vh, 1.6em);
     text-align: center;
   }
 
@@ -49,32 +67,13 @@
   }
 }
 
-.gradient-text-yellow {
-  background: linear-gradient(90deg, #ffec6d, #ffd700, #fffacd);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-  animation: glowGradient 3s ease-in-out infinite;
-}
-
-.text-white {
-  color: white;
-}
-
 .form-card {
   background: #fff;
-  border-radius: 16px;
+  padding: 4rem 3.5rem;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  padding: 2.5rem 3rem;
-  flex-basis: 45%;
-  max-height: 540px;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  margin-top:20px;
+  gap: 1.5rem;
 }
-
 
 .full-width {
   width: 100%;
@@ -83,36 +82,34 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .form-group label {
   font-weight: 600;
   color: #b71c1c;
-  margin-bottom: 0.4rem;
-  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
 .form-control {
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
+  padding: 1rem 1.3rem;
+  font-size: 1.2rem;
   border-radius: 8px;
-  
-  font-family: 'Montserrat', sans-serif;
 }
 
 button {
   margin-top: 1rem;
   width: 100%;
   font-weight: 600;
-  font-size: 1.1rem;
-  padding: 0.85rem 0;
+  font-size: 1.25rem;
+  padding: 1.1rem 0;
   border-radius: 8px;
 }
 
@@ -121,8 +118,8 @@ button {
   color: #b71c1c;
   border: 2px solid #b71c1c;
   font-weight: 600;
-  font-size: 1.1rem;
-  padding: 0.85rem 0;
+  font-size: 1.25rem;
+  padding: 1.1rem 0;
   border-radius: 8px;
   transition: all 0.3s ease;
   width: 100%;
@@ -165,6 +162,18 @@ button {
   }
 }
 
+.gradient-text-yellow {
+  background: linear-gradient(90deg, #ffec6d, #ffd700, #fffacd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  animation: glowGradient 3s ease-in-out infinite;
+}
+
+.text-white {
+  color: white;
+}
+
 @keyframes glowGradient {
   0%, 100% {
     background-position: 0% 50%;
@@ -173,27 +182,52 @@ button {
     background-position: 100% 50%;
   }
 }
-
-@media (max-width: 800px) {
+@media(max-width:768px){
+  .side-card,
+  .form-card {
+    width: 90% !important;
+  }
+}
+@media (max-width: 1000px) {
   .login-container {
     flex-direction: column;
-    max-width: 400px;
+    max-width: 550px;
     min-height: auto;
-    align-items: stretch;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5vh;
   }
 
   .side-card,
   .form-card {
     flex-basis: auto;
-    width: 90%;
-    min-height: auto;
+    width: 550px;
+    height: auto;
     max-height: none;
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 2rem;
     margin-left: auto;
     margin-right: auto;
   }
 
- 
+  .side-card .login-title {
+    font-size: 2.5rem;
+  }
+
+  .side-card p {
+    font-size: 1.2rem;
+  }
+
+  .form-group label {
+    font-size: 1.1rem;
+  }
+
+  .form-control {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  button, .custom-white-button {
+    font-size: 1rem;
+    padding: 0.85rem 0;
+  }
 }
-
-

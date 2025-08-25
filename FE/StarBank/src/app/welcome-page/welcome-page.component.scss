@@ -17,6 +17,7 @@
   color: white;
   z-index: 1;
   min-height: 300px;
+  height: 90vh;
 }
 
 #welcome-section::before {
@@ -92,15 +93,18 @@
 }
 
 #carouselExampleControls .carousel-item img {
-  height: 600px;
+  height: 90vh !important;
   object-fit: cover;
   width: 100%;
   opacity: 0.7;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .features-section {
-  padding: 4rem 2rem;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 2rem;
   background: #f8f9fa;
   color: #000;
 }
@@ -124,6 +128,9 @@
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 1s ease, transform 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .feature-card.left-card {
@@ -151,6 +158,7 @@
   min-height: 250px;
   align-items: center;
   text-align: center;
+  flex: 1;
 }
 
 .feature-card.left-card .sub-card ul {
@@ -187,6 +195,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex: 1;
 }
 
 mat-icon {
@@ -221,7 +230,6 @@ p, ul li {
     gap: 2rem;
     flex-direction: column;
   }
-
   .feature-card {
     flex: 1 1 100%;
     max-width: 100%;
@@ -231,33 +239,27 @@ p, ul li {
     transform: translateY(50px);
     transition: opacity 1s ease, transform 1s ease;
   }
-
   .feature-card.in-view {
     transform: translateY(0);
     opacity: 1;
   }
-
   .feature-card.left-card,
   .feature-card.right-card {
     max-width: 100%;
     transform: translateY(50px);
   }
-
   .feature-card.left-card.in-view,
   .feature-card.right-card.in-view {
     transform: translateY(0);
     opacity: 1;
   }
-
   .feature-card .sub-card {
     min-height: auto;
     padding: 1.5rem;
   }
-
   h3 {
     font-size: 1.8rem;
   }
-
   p, ul li {
     font-size: 1.5rem;
   }
@@ -300,13 +302,17 @@ body.dark-theme .rocket-icon {
 .reviews-section,
 .partners-section {
   position: relative;
-  padding: 60px 20px;
+  min-height: 100vh;
+  padding: 8rem 2rem;
   text-align: center;
   color: #fff;
   background: linear-gradient(135deg, red, black, white);
   background-size: 600% 600%;
   animation: gradient-flow 20s ease infinite;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .reviews-section::before,
@@ -347,11 +353,12 @@ body.dark-theme .rocket-icon {
 }
 
 .reviews-section .review-card {
-  width: 280px;
-  height: 180px;
+  width: clamp(260px, 25vw, 400px);
+  height: clamp(180px, 18vw, 300px);
   perspective: 1200px;
   cursor: pointer;
   position: relative;
+  font-size: clamp(1rem, 1.2vw, 1.4rem);
 }
 
 .reviews-section .review-card .card-front,
@@ -365,7 +372,7 @@ body.dark-theme .rocket-icon {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: clamp(16px, 2vw, 28px);
   backface-visibility: hidden;
   transition: transform 0.7s ease;
   color: white !important;
@@ -378,14 +385,14 @@ body.dark-theme .rocket-icon {
 }
 
 .reviews-section .review-card .card-front mat-icon {
-  font-size: 40px;
+  font-size: clamp(32px, 3vw, 52px);
   color: gold;
   margin-bottom: 12px;
 }
 
 .reviews-section .review-card .card-front .review-author {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
   margin-top: 10px;
   color: white !important;
 }
@@ -397,7 +404,7 @@ body.dark-theme .rocket-icon {
 
 .reviews-section .review-card .card-back .review-text {
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.1vw, 1.4rem);
   padding: 0 10px;
   color: white !important;
 }
@@ -534,9 +541,11 @@ body.dark-theme .rocket-icon {
     height: 70vh;
   }
 }
+
 .rocket-icon {
   color: black;
 }
+
 .contact-section {
   background: url('../../assets/slide1.jpeg') center/cover no-repeat;
   position: relative;
@@ -562,26 +571,26 @@ body.dark-theme .rocket-icon {
   z-index: 2;
 }
 
-
-
-
 #carouselExampleControls,
 .carousel-inner,
-.carousel-item {
-  height: 700px; }
+.carousel-item,
+.features-section, .feature-card, .features-container {
+  height: auto;
+}
 
 #carouselExampleControls .carousel-item img {
-  height: 100%; 
+  height: 100%;
   width: 100%;
   object-fit: cover;
   opacity: 0.7;
   transition: opacity 0.5s ease;
 }
+
 #carouselExampleControls .carousel-item img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  object-position: center top; 
+  object-position: center top;
   opacity: 0.7;
   transition: opacity 0.5s ease;
 }
