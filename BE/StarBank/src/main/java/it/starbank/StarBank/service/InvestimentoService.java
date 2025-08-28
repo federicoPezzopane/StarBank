@@ -31,6 +31,7 @@ public class InvestimentoService {
 
     public Investimento addInvestimento(InvestimentoDTO investimentoDTO){
 
+
         Fondo fondo = fondoRepository.findById(investimentoDTO.getIdFondo())
                 .orElseThrow(() -> new RuntimeException("Fondo non trovato"));
         ValoreFondo ultimoValore = valoreFondoRepository
@@ -38,6 +39,16 @@ public class InvestimentoService {
                 .orElseThrow(() -> new RuntimeException("Nessun valore disponibile per questo fondo"));
         Iban iban = ibanRepository.findById(investimentoDTO.getIbanId())
                 .orElseThrow(() -> new RuntimeException("IBAN non trovato"));
+
+        float importoInvestimento = investimentoDTO.getQuantita() * ultimoValore.getValore();
+
+
+        if (iban.getSaldoDisponibile() < importoInvestimento) {
+            throw new RuntimeException("Saldo insufficiente per effettuare l’investimento");
+        }
+
+        iban.setSaldoDisponibile(iban.getSaldoDisponibile() - importoInvestimento);
+        ibanRepository.save(iban);
 
         Investimento investimento = new Investimento();
         investimento.setFondo(fondo);

@@ -365,3 +365,30 @@
   background: linear-gradient(135deg, #fafafa, #fdfdfd);
   border: 1px solid #eee;
 }
+
+.iban-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.iban-header h2 {
+  margin: 0;
+  word-break: break-word; 
+  max-width: 100%;        
+}
+
+
+@media (max-width: 600px) {
+  .iban-header {
+    flex-direction: column; 
+    gap: 0.5rem;
+  }
+
+  .iban-header h2 {
+    font-size: 2rem; 
+  }
+}

@@ -18,7 +18,7 @@ import { ConfermaCancellazioneCartaDialogComponent } from '../conferma-cancellaz
 import { Carta } from 'src/model/carta.model';
 import { MovimentoDettaglioDialogComponent } from '../movimento-dettaglio-dialog/movimento-dettaglio-dialog.component';
 import { Movimento } from 'src/model/movimento.model';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-area-riservata',
@@ -44,7 +44,8 @@ export class AreaRiservataComponent implements OnInit {
     private dialog: MatDialog,
     private movimentoService: MovimentoService,
     public notificationService: NotificationService,
-    private cartaService: CartaService
+    private cartaService: CartaService,
+    private snackBar: MatSnackBar
   ) {}
 ibanMittente: string = ''; 
   ngOnInit(): void {
@@ -266,5 +267,9 @@ openRichiestaCartaDialog() {
     panelClass: 'custom-dialog-panel', 
      backdropClass: 'custom-dialog-backdrop'
   });
+}
+
+showCopyMessage() {
+  this.notificationService.showSuccess("IBAN copiato negli appunti!");
 }
 }

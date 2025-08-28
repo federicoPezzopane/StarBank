@@ -74,7 +74,7 @@ export class InvestimentiComponent implements OnInit {
       disableClose: true,
        panelClass: 'custom-dialog-panel', 
      backdropClass: 'custom-dialog-backdrop',
-      data : {username: this.utente.username, ibanId: this.utente.iban?.ibanId}
+      data : {username: this.utente.username, ibanId: this.utente.iban?.ibanId, saldoDisponibile: this.utente.iban?.saldoDisponibile}
     });
 
     dialogRef.afterClosed().subscribe(result => {

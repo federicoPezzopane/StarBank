@@ -34,6 +34,8 @@
       Totale investimento: €
     {{ (form.get('quantita')?.value || 0) * (valoreAttuale || 0) | number:'1.2-2' }}
     </p>
+    <p><strong>Saldo disponibile:</strong> {{ data.saldoDisponibile | number:'1.2-2'}} €</p>
+
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Inserisci la tua password</mat-label>
         <input matInput type="password" formControlName="confermaPassword" />

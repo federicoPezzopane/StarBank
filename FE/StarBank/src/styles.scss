@@ -507,7 +507,7 @@ mat-sidenav-content {
   box-sizing: border-box !important;
 }
 
-.mat-mdc-select-panel { min-width: unset !important; }
+.mat-mdc-select-panel { min-width: unset !important; overflow-y: auto;}
 
 .custom-operation-btn {
   background: linear-gradient(135deg, #ff3b3b, #ff6666);

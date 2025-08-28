@@ -39,7 +39,15 @@
 
     <div class="main-content">
       <div class="card iban-card">
-  <h2 class="gradient-text">Conto: {{ utente.iban?.iban }}</h2>
+  <div class="iban-header">
+    <h2 class="gradient-text">Iban: {{ utente.iban?.iban }}</h2>
+    <button mat-icon-button
+            [cdkCopyToClipboard]="utente.iban!.iban"
+            (click)="showCopyMessage()"
+            aria-label="Copia IBAN" style="margin-bottom: 1rem;">
+      <mat-icon>content_copy</mat-icon>
+    </button>
+  </div>
 
   <div class="saldo-wrapper">
     <div class="saldo-box">

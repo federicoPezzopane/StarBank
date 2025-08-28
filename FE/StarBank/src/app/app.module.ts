@@ -36,8 +36,8 @@ import { InvestimentoDettaglioComponent } from './investimento-dettaglio/investi
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
 import { MovimentoDettaglioDialogComponent } from './movimento-dettaglio-dialog/movimento-dettaglio-dialog.component';
-
-
+import { ClipboardModule } from '@angular/cdk/clipboard';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: true,
 };
@@ -77,6 +77,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     ReactiveFormsModule,
     HttpClientModule,
     NgChartsModule,
+    ClipboardModule,
+    MatSnackBarModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,

@@ -51,6 +51,10 @@ export class NuovoInvestimentoDialogComponent implements OnInit {
 
   confermaInvestimento() {
     if (!this.form.valid || !this.fondoSelezionato) return;
+    if(this.data.saldoDisponibile< (this.form.get('quantita')?.value * this.valoreAttuale!)){
+      this.toastr.error("Saldo Insufficiente per completare l'investimento")
+      return;
+    }
     this.authService.login(this.data.username,this.form.value.confermaPassword).subscribe({
         next: res => {
           this.investimentoService.nuovoInvestimento(this.fondoSelezionato!.idFondo,
