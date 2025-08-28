@@ -16,7 +16,7 @@ Database:
 Descrizione : Il progetto StarBank si pone come obbiettivo quello di riprodurre alcuni casi d'uso
 di una ideologica banca online :
 	-ACCESSO : Securizzato tramite jwt
-	-TRANSAZIONI : Invio / Ricezione Bonifici Sepa, Effettuare pagamenti online
+	-TRANSAZIONI : Invio / Ricezione Bonifici Sepa
 	-RICHIESTA DOCUMENTAZIONE : Possibilità di scaricare file di report PDF [ Estratto conto, spese mensili / in un intervallo di tempo definito ]
 	-RICHIESTA PRESTITI: Possibilità di richiedere prestiti a cui aggiungere un tasso di interesse da restituire
 	-RICHIESTA CARTE DI CREDITO/DEBITO : Possibilità di richiedere carte di pagamento
