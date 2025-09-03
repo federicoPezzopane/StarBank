@@ -87,12 +87,16 @@ export class InvestimentiComponent implements OnInit {
   }
 
   apriDettaglio(investimento: Investimento) {
-    this.dialog.open(InvestimentoDettaglioComponent, {
+     const dialogRef = this.dialog.open(InvestimentoDettaglioComponent, {
       width: '800px',
       panelClass: 'custom-dialog-panel', 
      backdropClass: 'custom-dialog-backdrop',
-      data: { investimento }
+      data: { investimento, username : this.utente.username }
     });
+    dialogRef.afterClosed().subscribe(result => {
+    if (result === 'closed-investimento') {
+      this.loadInvestimenti(); }
+  });
   }
   tornaAreaRiservata() {
   this.router.navigate(['/area-riservata']); 

@@ -15,7 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AreaRiservataComponent } from './area-riservata/area-riservata.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@angular/material/core';
@@ -38,6 +38,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { MovimentoDettaglioDialogComponent } from './movimento-dettaglio-dialog/movimento-dettaglio-dialog.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ConfirmCloseInvestimentoDialogComponent } from './confirm-close-investimento-dialog/confirm-close-investimento-dialog.component';
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: true,
 };
@@ -57,9 +58,12 @@ const globalRippleConfig: RippleGlobalOptions = {
     NuovoInvestimentoDialogComponent,
     InvestimentiCardComponent,
     InvestimentoDettaglioComponent,
-    MovimentoDettaglioDialogComponent
+    MovimentoDettaglioDialogComponent,
+  
+    ConfirmCloseInvestimentoDialogComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

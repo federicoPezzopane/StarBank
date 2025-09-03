@@ -9,6 +9,9 @@ import { Investimento } from 'src/model/investimento.model';
   providedIn: 'root'
 })
 export class InvestimentoService {
+  chiudiInvestimento(investimentoId: number):Observable<Investimento> {
+    return this.http.post<Investimento>(`${this.baseUrl}/chiudiInvestimento/${investimentoId}`,{}, { headers : this.authService.getHeaders() });
+  }
   private baseUrl = environment.apiBaseUrl + '/investimento';
   nuovoInvestimento( fondoId: number, quantita: number, ibanId: number):Observable<Investimento> {
     const InvestimentoDto = {

@@ -60,4 +60,20 @@ public class InvestimentoService {
 
         return investimentoRepository.save(investimento);
     }
+
+    public Investimento chiudiInvestimento(int investimentoId){
+            Investimento inv = investimentoRepository.findById(investimentoId)
+                    .orElseThrow(() -> new RuntimeException("Investimento non trovato"));
+
+            double investimentoIniziale = inv.getQuantita() * inv.getPrezzoAcquisto();
+            double valoreAttuale = inv.getQuantita() * inv.getValoreAttuale();
+            double profitto =  (valoreAttuale - investimentoIniziale);
+
+            Iban iban = inv.getIban();
+            iban.setSaldoDisponibile(iban.getSaldoDisponibile() + investimentoIniziale + profitto);
+            ibanRepository.save(iban);
+
+            investimentoRepository.delete(inv);
+            return inv;
+    }
 }

@@ -28,10 +28,10 @@ public class Iban {
     private String iban;
 
     @Column(name = "saldo_disponibile")
-    private Float saldoDisponibile;
+    private double saldoDisponibile;
 
     @Column(name = "saldo_contabile")
-    private Float saldoContabile;
+    private double saldoContabile;
 
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")

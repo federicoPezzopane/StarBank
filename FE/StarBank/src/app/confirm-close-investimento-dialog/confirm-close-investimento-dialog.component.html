@@ -1,0 +1,30 @@
+<div class="dialog-container">
+  <div class="dialog-subcontainer">
+    <h2 mat-dialog-title class="dialog-title">
+      Conferma chiusura investimento
+    </h2>
+
+    <mat-dialog-content class="w-full flex flex-col gap-2">
+      <p class="dialog-content-text"><strong>Investimento iniziale:</strong> € {{ investimentoIniziale | number:'1.2-2' }}</p>
+      <p class="dialog-content-text"><strong>Valore attuale:</strong> € {{ valoreAttuale | number:'1.2-2' }}</p>
+      <p class="dialog-content-text">
+        <strong>P/L:</strong>
+        <span [ngClass]="{ 'positivo': profitto >= 0, 'negativo': profitto < 0 }">
+          € {{ profitto | number:'1.2-2' }}
+        </span>
+      </p>
+
+      <mat-form-field appearance="outline" class="w-full mt-2">
+        <mat-label>Password</mat-label>
+        <input matInput [(ngModel)]="password" type="password" />
+      </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-actions class="w-full justify-center gap-4 mt-4">
+      <button mat-button (click)="onCancel()">Annulla</button>
+      <button mat-raised-button color="warn" [disabled]="!password" (click)="onConfirm()">
+        Conferma
+      </button>
+    </mat-dialog-actions>
+  </div>
+</div>

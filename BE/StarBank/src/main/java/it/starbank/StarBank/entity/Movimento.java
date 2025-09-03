@@ -46,10 +46,10 @@ public class Movimento {
     private String descrizione;
 
     @Column(name = "saldo_pre_movimento")
-    private float saldoPreMovimento;
+    private double saldoPreMovimento;
 
     @Column(name = "saldo_post_movimento")
-    private float saldoPostMovimento;
+    private double   saldoPostMovimento;
 
 
 }

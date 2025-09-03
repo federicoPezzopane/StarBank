@@ -16,8 +16,8 @@
   max-width: 100%;
   padding: 0 1rem;
   box-sizing: border-box;
-  max-height: 500px; /* più spazio verticale */
-  overflow-y: auto;  /* scrollbar verticale se necessario */
+  max-height: 500px;
+  overflow-y: auto;  
 }
 
 .movimento-dettaglio {
@@ -26,12 +26,12 @@
   gap: 0.5rem;
   font-size: 1rem;
   width: 100%;
-  max-width: 450px; /* uguale al form modifica info */
+  max-width: 450px; 
   box-sizing: border-box;
 
   p {
     margin: 0;
-    word-break: break-word; /* evita scrollbar orizzontale su IBAN lunghi */
+    word-break: break-word;
   }
 
   .positivo {
