@@ -40,3 +40,40 @@
      text-align: left;
   }
 }
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  p.dialog-content-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 1rem;
+
+    strong {
+      margin-right: 0.5rem;
+    }
+  }
+
+
+   @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 0.2rem;
+      justify-content: left;
+    }
+  }
+
+  @media (max-width: 480px) {
+    p.dialog-content-text {
+      font-size: 1.3rem;
+      justify-content: left !important;
+    }
+    .dialog-subcontainer{
+      width: 80%;
+      padding: 5px;
+    }
+    .dialog-container{
+      margin-left: 0;
+    }
+  }
