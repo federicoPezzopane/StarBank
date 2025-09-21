@@ -39,7 +39,7 @@ I seguenti sono i moduli in cui si divide l'applicativo :
 		sarà da qui poi possibile accedere in altre sezioni
 			
 			-Invio Bonifici : Questa sezione permette di effettuare un bonifico SEPA ad un altro iban; si seguiranno una serie di form che porteranno poi l'utente
-			un riepilogo e una richiesta di conferma inserendo il suo pin personale
+			un riepilogo e una richiesta di conferma inserendo il suo pin personale . I bonifici sono contabilizzati ogni sera a mezzanotte da un batch, che verifica i movimenti con il campo contabilizzato = false
 			
 			-Richiesta carte di credito, debito : Da questa sezione si vedrà in alto le carte attualmente disponibili, le quali saranno selezionabili
 			per poter visualizzare i movimenti delle stesse al di sotto; inoltre, sarà possibile richiedere una nuova carta (credito, debito)
