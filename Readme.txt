@@ -36,19 +36,17 @@ I seguenti sono i moduli in cui si divide l'applicativo :
 		-Il proprio saldo disponibile / contabile
 		-Un elenco delle proprie operazioni ( entrate, uscite entro un range di 1 mese; volendo si può ampliare il filtro di ricerca della data )
 		-Il totale delle entrate / uscite per questo mese ( solare , dal primo del mese ) 
-		sarà da qui poi possibile accedere in altre sezioni
+		sarà da qui poi possibile usufruire di alcune sezioni per effettuare diverse operazioni :
 			
 			-Invio Bonifici : Questa sezione permette di effettuare un bonifico SEPA ad un altro iban; si seguiranno una serie di form che porteranno poi l'utente
-			un riepilogo e una richiesta di conferma inserendo il suo pin personale . I bonifici sono contabilizzati ogni sera a mezzanotte da un batch, che verifica i movimenti con il campo contabilizzato = false
+			un riepilogo e una richiesta di conferma inserendo il suo pin personale . I bonifici sono contabilizzati ogni sera a mezzanotte da un batch, 
+			che verifica i movimenti con il campo contabilizzato = false
 			
-			-Richiesta carte di credito, debito : Da questa sezione si vedrà in alto le carte attualmente disponibili, le quali saranno selezionabili
-			per poter visualizzare i movimenti delle stesse al di sotto; inoltre, sarà possibile richiedere una nuova carta (credito, debito)
+			-Richiesta carte di credito, debito : possibilità di richiedere una nuova carta (credito, debito)
 			
-			-Investimenti : in questa sezione sarà possibile vedere i propri investimenti, con relativo guadagno / perdita; i fondi associati agli investimenti varieranno di valore ogni 2 giorni grazie ad un batch( spring batch ) che varierà il valore attuale del fondo in base al rischio stesso; i valori passati dei fondi dopo la modifica saranno salvati su una tabella per fare lo "storico" del prezzo
-			
-			-Documentazione : Da qui si accederà alla sezione per poter richiedere documenti scaricabili come file pdf; i documenti saranno generabili per
-				-Estratto conto Carta di credito ( richiedibile se si possiede carta di credito )
-				-Estrazione Movimenti negli ultimi x giorni ( impostabili di defaut da una dropdown o dall'utente, fino ad un max di 90 giorni )
+			-Investimenti : un pullsante permetterà di essere reindirizzata alla sezione Investimenti
 				
 			-Informazioni Personali : Da qui si potranno visualizzare/modificare le informazioni personali
+
+	-Sezione Investimenti: Da qui si potranno effettuare nuovi investimenti, vedere il proprio P/L , la lista dei propri investimenti con delle card, le quali saranno cliccabili per vedere lo storico 				dell'investimento stesso ed eventualmente chiudere lo stesso
 	
