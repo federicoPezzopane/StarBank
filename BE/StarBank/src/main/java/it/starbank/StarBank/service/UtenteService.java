@@ -59,12 +59,13 @@ public class UtenteService implements UserDetailsService {
         user.setIndirizzoResidenza(registerDTO.getIndirizzoResidenza());
 
 
+
         //Imposto iban
         Iban iban = new Iban();
         iban.setUtente(user);
         iban.setIban(this.ibanService.generaIbanRandom());
-        iban.setSaldoContabile(0f);
-        iban.setSaldoDisponibile(0f);
+        iban.setSaldoContabile(10000f);
+        iban.setSaldoDisponibile(10000f);
         iban.setUtente(user);
         user.setIban(iban);
         return utenteRepository.save(user);

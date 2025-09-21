@@ -23,6 +23,9 @@ public class MovimentoService {
         Movimento movimentoUscente = new Movimento();
         Movimento movimentoEntrante = new Movimento();
 
+        movimentoUscente.setContabilizzato(false);
+        movimentoEntrante.setContabilizzato(false);
+
         movimentoUscente.setImporto(-movimentoDto.getImporto());
         movimentoEntrante.setImporto(movimentoDto.getImporto());
 
@@ -51,6 +54,7 @@ public class MovimentoService {
 
         movimentoUscente.setIban(mittente);
         movimentoEntrante.setIbanDestinazione(destinatario);
+        movimentoEntrante.setIban(destinatario);
 
         movimentoUscente.setDataMovimento(new java.sql.Date(System.currentTimeMillis()));
         movimentoEntrante.setDataMovimento(new java.sql.Date(System.currentTimeMillis()));

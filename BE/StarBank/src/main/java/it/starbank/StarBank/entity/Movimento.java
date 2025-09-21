@@ -51,5 +51,8 @@ public class Movimento {
     @Column(name = "saldo_post_movimento")
     private double   saldoPostMovimento;
 
+    @Column(name = "contabilizzato")
+    private boolean contabilizzato = false;
+
 
 }
