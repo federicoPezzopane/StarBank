@@ -112,15 +112,19 @@ $starbank-dark-theme: mat.define-dark-theme((color: (primary: $starbank-primary,
 }
 
 .dark-theme {
-  .features-section {
+  .features-section,
+  .area-riservata-section,
+  .investimenti-section {
     background-color: #1e1e1e !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) !important;
     color: #eee !important;
     transition: background-color 0.7s ease, color 0.7s ease, box-shadow 0.7s ease;
   }
 
-  .area-riservata-section {
-    .movimento-card {
+  .area-riservata-section,
+  .investimenti-section {
+    .movimento-card,
+    .investimento-card {
       background-color: #1e1e1e !important;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) !important;
       color: #eee !important;
@@ -142,9 +146,9 @@ $starbank-dark-theme: mat.define-dark-theme((color: (primary: $starbank-primary,
 
     p, ul li { color: #ccc !important; }
 
-    .movimento-header { color: #eee !important; }
+    .movimento-header, .investimento-header { color: #eee !important; }
 
-    .movimento-header .tipo { color: #ff6666 !important; }
+    .movimento-header .tipo, .investimento-header .tipo { color: #ff6666 !important; }
 
     .importo.positivo { color: #90ee90 !important; }
 
@@ -160,7 +164,10 @@ $starbank-dark-theme: mat.define-dark-theme((color: (primary: $starbank-primary,
     }
   }
 
-  .area-riservata-section, .area-riservata-section .card {
+  .area-riservata-section, 
+  .area-riservata-section .card,
+  .investimenti-section,
+  .investimenti-section .card {
     transition: background-color 0.7s ease, color 0.7s ease, box-shadow 0.7s ease;
   }
 
@@ -177,7 +184,8 @@ $starbank-dark-theme: mat.define-dark-theme((color: (primary: $starbank-primary,
   body.dark-theme mat-sidenav-content,
   body.dark-theme .content,
   body.dark-theme footer.footer,
-  body.dark-theme .features-section {
+  body.dark-theme .features-section,
+  body.dark-theme .investimenti-section {
     background-color: #121212 !important;
     color: white !important;
   }
@@ -421,6 +429,7 @@ mat-sidenav-content {
 
 .custom-dialog-backdrop { background: rgba(0, 0, 0, 0.6); height: 5000px; }
 
+
 .bonifico-dialog-panel, .custom-dialog-panel {
   position: fixed !important;
   top: 0; bottom: 0; left: 0; right: 0;
@@ -537,7 +546,7 @@ mat-sidenav-content {
     padding: 0;
     z-index: 1500 !important;
     overflow: visible !important;
-    display: block !important; /* rimuove il flex */
+    display: block !important;
   }
 
   .mat-mdc-dialog-surface {
@@ -565,4 +574,3 @@ mat-sidenav-content {
 .material-icons-custom{
   line-height: 2 !important;
 }
-
